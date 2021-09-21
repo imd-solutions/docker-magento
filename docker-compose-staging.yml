@@ -1,0 +1,120 @@
+version: '3'
+
+networks:
+  stage_magento:
+    ipam:
+      config:
+        - subnet: 170.20.0.0/24
+
+services:
+  web:
+    image: webdevops/php-apache-dev:7.4-alpine
+    container_name: web_${SITE}
+    restart: always
+    user: application
+    environment:
+      - WEB_ALIAS_DOMAIN=${WEB_ALIAS_DOMAIN}
+      - WEB_DOCUMENT_ROOT=${WEB_DOCUMENT_ROOT}
+      - PHP_DATE_TIMEZONE=${PHP_DATE_TIMEZONE}
+      - PHP_DISPLAY_ERRORS=${PHP_DISPLAY_ERRORS}
+      - PHP_MEMORY_LIMIT=${PHP_MEMORY_LIMIT}
+      - PHP_MAX_EXECUTION_TIME=${PHP_MAX_EXECUTION_TIME}
+      - PHP_POST_MAX_SIZE=${PHP_POST_MAX_SIZE}
+      - PHP_UPLOAD_MAX_FILESIZE=${PHP_UPLOAD_MAX_FILESIZE}
+    volumes:
+      - ./backend:/app:cached
+    networks:
+      stage_magento:
+        ipv4_address: 170.20.0.2
+    ports:
+      - ${FRONTEND_PORT}:80
+      - ${FRONTEND_SSL_PORT}:443
+      - ${FRONTEND_SSH_PORT}:22
+    links:
+      - mysql
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_${SITE}
+    restart: always
+    ports:
+      - ${MYSQL_PORT}:3306
+    environment:
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - SERVICE_TAGS=${SERVICE_TAGS}
+      - SERVICE_NAME=${SERVICE_NAME}
+    networks:
+      stage_magento:
+        ipv4_address: 170.20.0.3
+    volumes:
+      - ./mysql:/var/lib/mysql
+
+  redis:
+    image: redis:latest
+    container_name: redis_${SITE}
+    restart: always
+    ports:
+      - ${REDIS_PORT}:6379
+    networks:
+      stage_magento:
+        ipv4_address: 170.20.0.4
+    volumes:
+      - ./redis:/data
+
+  redis-session:
+    image: redis
+    container_name: redis_session_${SITE}
+    ports:
+      - ${REDIS_SESSION_PORT}:6379
+    networks:
+      stage_magento:
+        ipv4_address: 170.20.0.5
+
+
+  elasticsearch:
+    build:
+      context: ./elasticsearch
+      dockerfile: Dockerfile
+    container_name: elasticsearch_${SITE}
+    environment:
+      - cluster.name=docker-cluster
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - node.name=node-1
+      - cluster.initial_master_nodes=node-1
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - ./elasticsearchdata:/usr/share/elasticsearch/data
+    ports:
+      - ${ELASTICSEARCH_PORT}:9200
+    networks:
+      stage_magento:
+        ipv4_address: 170.20.0.6
+
+  composer:
+    build:
+      context: ./composer
+      dockerfile: Dockerfile
+    container_name: composer_${SITE}
+    volumes:
+      - ./backend:/app
+    working_dir: /app
+    depends_on:
+      - web
+    user: magento
+    #entrypoint: ["composer", "install", "--ignore-platform-reqs"]
+    networks:
+      stage_magento:
+        ipv4_address: 170.20.0.7
+
+volumes:
+  mysql:
+    external: false
+  redis:
+    external: false

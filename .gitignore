@@ -1,0 +1,7 @@
+/elasticsearchdata/*
+/mysql/*
+/redis/*
+/.idea
+/.idea/*
+/.idea/workspace.xml
+.env
