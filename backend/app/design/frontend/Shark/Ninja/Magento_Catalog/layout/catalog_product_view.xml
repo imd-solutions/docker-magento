@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+  <body>
+<referenceBlock name="breadcrumbs" remove="true" />
+    <referenceContainer name="columns">
+      <container name="product.container" htmlTag="div" htmlClass="container">
+      <block class="Magento\Framework\View\Element\Template" name="product.breadcrumbs" template="Magento_Catalog::product/view/breadcrumbs.phtml" before="-" />
+          <container name="product.container.row" htmlTag="div" htmlClass="row" before="-">
+          <container name="product.info.gallerysection" htmlTag="div" htmlClass="col-md-12 col-lg-5" before="product.info.main">
+
+            </container>
+            <container name="product.info.main" htmlTag="div" htmlClass="col-md-12 col-lg-6 offset-lg-1" before="-">
+
+            </container>
+            
+          </container>
+      </container>
+      <block class="Magento\Framework\View\Element\Template" name="products.info.upsells" template="PragmaticDigital_HomeBlocks::upsell_cards.phtml"/>
+
+      <container name="product.features.container" htmlTag="div" htmlClass="features-container">
+        <block class="Magento\Framework\View\Element\Template" name="products.tabs.nav" template="Magento_Catalog::product/view/tabs/header.phtml"/>
+        <container name="product.features.tabs.inner" htmlTag="div" htmlClass="product-tabs__inner">
+          <block class="Magento\Framework\View\Element\Template" name="products.tabs.features" template="Magento_Catalog::product/view/tabs/features.phtml"/>
+          <block class="Magento\Framework\View\Element\Template" name="products.tabs.details" template="Magento_Catalog::product/view/tabs/product-details.phtml"/>
+          <block class="Magento\Framework\View\Element\Template" name="products.tabs.spec" template="Magento_Catalog::product/view/tabs/product-spec.phtml"/>
+          <block class="Magento\Framework\View\Element\Template" name="products.tabs.whats" template="Magento_Catalog::product/view/tabs/whats-included.phtml"/>
+          <block class="Magento\Framework\View\Element\Template" name="products.tabs.faqs" template="Magento_Catalog::product/view/tabs/faqs.phtml"/>
+          <block class="Magento\Framework\View\Element\Template" name="products.tabs.support" template="Magento_Catalog::product/view/tabs/product-support.phtml"/>
+        </container>
+      </container>
+
+      <block class="Magento\Framework\View\Element\Template" name="products.info.bazar-block" template="Magento_Catalog::product/view/bazar.phtml"/>
+      <block class="Magento\Framework\View\Element\Template" name="products.info.bazar-reviews" template="Magento_Catalog::product/view/reviews.phtml"/>
+
+    </referenceContainer>
+
+    <move element="product.info.media" destination="product.info.gallerysection" before="-"/>
+    <referenceContainer name="product.info.social" remove="true" />
+    <referenceBlock name="product.info.description"   remove="true" />
+    <referenceContainer name="product.info.type" remove="true" />
+
+    <move element="page.main.title" destination="product.info.main" before="-"/>
+    <move element="product.info.review" destination="product.info.main" before="product.info.price"/>
+    <referenceBlock class="Magento\Catalog\Block\Product\View\Description" name="product.info.sku" template="Magento_Catalog::product/view/attribute.phtml">
+        <arguments>
+            <argument name="at_call" xsi:type="string">getSku</argument>
+            <argument name="at_code" xsi:type="string">sku</argument>
+            <argument name="css_class" xsi:type="string">sku</argument>
+            <argument name="at_label" xsi:type="string" translate="true">Model</argument>
+            <argument name="add_attribute" xsi:type="string">itemprop="sku"</argument>
+        </arguments>
+    </referenceBlock>
+
+    <block class="Magento\Catalog\Block\Product\View" name="product.payment.badge" template="Magento_Catalog::product/view/payment-product-display-page.phtml"/>
+    <move element="product.payment.badge" destination="product.info.main" after="product.info.price" before="product-add-form"/>
+    <move element="product.info.addtocart" destination="product.info.main" after="product.info.overview" before="product.delivery.badge"/>
+    
+    <block class="Magento\Catalog\Block\Product\View" name="product.delivery.badge" template="Magento_Catalog::product/view/delivery-badge.phtml"/>
+    <move element="product.delivery.badge" destination="product.info.main" after="product-add-form" before="product.paymentsupport.badge"/>
+    
+    <block class="Magento\Catalog\Block\Product\View" name="product.paymentsupport.badge" template="Magento_Catalog::product/view/paymentsupport-product-display-page.phtml"/>
+    <move element="product.paymentsupport.badge" destination="product.info.main" after="product.delivery.badge" before="product.info.details"/>
+
+
+    <block class="Magento\Catalog\Block\Product\View" name="product.info.rating" template="Magento_Catalog::product/view/rating.phtml"/>
+    <move element="product.info.rating" destination="product.info.main" after="page.main.title"/>
+
+
+    <referenceContainer name="page.bottom" htmlClass="full-page">
+        <block class="Magento\Framework\View\Element\Template" name="pragmaticdigital.productslider" template="PragmaticDigital_HomeBlocks::category-slider.phtml"/>
+    </referenceContainer>
+    <block class="Magento\Framework\View\Element\Template" name="pragmatic.productpage.upsells" template="PragmaticDigital_HomeBlocks::upsell_cards.phtml"/>
+    <move element="pragmatic.productpage.upsells" destination="content" before="product.info.details" after="product.info.main"/>
+
+<referenceContainer name="page.bottom" htmlClass="full-page">
+        <block class="Magento\Framework\View\Element\Template" name="pragmaticdigital.product.banner" template="Magento_Catalog::product/view/fixed-banner.phtml"/>
+    </referenceContainer>
+
+  </body>
+</page>

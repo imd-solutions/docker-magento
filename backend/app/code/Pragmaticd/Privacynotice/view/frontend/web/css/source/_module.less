@@ -1,0 +1,178 @@
+
+@font-size__s: 14px;
+@font-size__m: 16px;
+
+@color-white: #ffffff;
+@color-black: #000000;
+@c-grey300: #D0D5DD;
+& when (@media-common = true) {
+    .container-privacy-notice {
+    font-family: 'Proxima-Nova';
+    ul {
+        padding-left:40px;
+    }
+.privacy-heading {
+    .title{
+        color: var(--base-black, #000);
+        font-family: "Proxima Nova";
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 400;
+        //line-height: 125%; 
+    }
+    .subtitle  {
+        color: var(--primary-200);
+    }
+    border-bottom: 2px solid var(--gray-300);
+}
+.privacy-content {
+    p {
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+}
+    padding:20px;
+    //font-family: @font-family__main;
+
+    .card-body {
+        background-color: @color-white;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        margin-bottom: 20px;
+        padding:20px;
+
+    }
+
+.panel {
+    background-color: var(--gray-300);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    padding:20px;
+}
+.panel-title {
+    font-size:18px;
+}
+.active {
+    background-color: var(--white);
+    .panel-title {
+        border-bottom:1px solid var(--gray-300);
+    }
+}
+.btn-white {
+    border: 2px solid var(--black);
+}
+.panel-heading {
+//display:inline-flex;
+cursor: pointer;
+
+}
+.panel-default {
+    background-color: var(--white);
+}
+
+.toggle-btn {
+    //width:10%!important;
+    border-radius: 40px !important;
+    padding: unset !important;
+
+}
+.toggle-shark{
+    float:right;
+    vertical-align: middle !important;
+    transform: translateY(-40px);
+}
+.shark-up {
+    background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 4.30078C9.37259 4.30078 4 9.67336 4 16.3008C4 22.9282 9.37258 28.3008 16 28.3008C22.6274 28.3008 28 22.9282 28 16.3008C28 9.67336 22.6274 4.30078 16 4.30078Z' fill='black' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M20.7998 18.0381L15.9998 13.2381L11.1998 18.0381' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") !important;
+
+    background-size:contain !important;
+    background-position:center !important; 
+    background-repeat:no-repeat !important;
+    background-color: transparent !important;
+    border:none !important;
+    width:24px;
+    height:24px;
+
+    &:hover{
+        background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 4.30078C9.37259 4.30078 4 9.67336 4 16.3008C4 22.9282 9.37258 28.3008 16 28.3008C22.6274 28.3008 28 22.9282 28 16.3008C28 9.67336 22.6274 4.30078 16 4.30078Z' fill='white' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M20.7998 18.0381L15.9998 13.2381L11.1998 18.0381' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") !important;
+
+        background-size:contain !important;
+        background-position:center !important; 
+        background-repeat:no-repeat !important;
+        background-color: transparent !important;
+        border:none !important;
+        width:24px;
+        height:24px;
+    }
+
+
+}
+.shark-down {
+    background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 28.3008C22.6274 28.3008 28 22.9282 28 16.3008C28 9.67337 22.6274 4.30078 16 4.30078C9.37258 4.30078 4 9.67336 4 16.3008C4 22.9282 9.37258 28.3008 16 28.3008Z' fill='%23667085' stroke='%23667085' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M11.2002 14.5635L16.0002 19.3635L20.8002 14.5635' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") !important;
+   
+    background-size:contain !important;
+    background-position:center !important; 
+    background-repeat:no-repeat !important;
+    background-color: transparent !important;
+    border:none !important;
+    width:24px;
+    height:24px;
+    &:hover{
+        background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 28.3008C22.6274 28.3008 28 22.9282 28 16.3008C28 9.67337 22.6274 4.30078 16 4.30078C9.37258 4.30078 4 9.67336 4 16.3008C4 22.9282 9.37258 28.3008 16 28.3008Z' fill='white' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M11.2002 14.5635L16.0002 19.3635L20.8002 14.5635' stroke='%23667085' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") !important;
+  
+        background-size:contain !important;
+        background-position:center !important; 
+        background-repeat:no-repeat !important;
+        background-color: transparent !important;
+        border:none !important;
+        width:24px;
+        height:24px;
+    }
+
+}
+
+
+}
+.card-difficulty {
+    background-color: var(--gray-300);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-top: 10% !important;
+    padding:20px;
+    .card-title{
+        h6 {
+            font-weight:bold;
+            font-size: 18px;
+            display: inline-block;
+            vertical-align: top;
+            padding-left: 5px;
+        }
+    }
+    .btn-primary {
+        background-color: var(--black);
+        border: none;
+        padding: 10px 20px;
+        color: @color-white;
+        border-radius: 40px;
+        text-decoration: none;
+        width:100%;
+    }
+    .btn-primary:hover {
+        background-color: #5c3980;
+        border: none;
+        padding: 10px 20px;
+        color: @color-white;
+        border-radius: 40px;
+        text-decoration: none;
+    }
+    .btn-primary img {
+        vertical-align: middle;
+        margin-right: 8px;
+    }
+}
+}
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .card-difficulty {
+        margin-top: 5px;
+    }
+}

@@ -1,0 +1,20 @@
+<?php
+//add `hero-banner--vertical-align` to the hero-banner to align text to the centre vertically.
+//add `hero-banner--mobile-white-section` this fixes the inner content to the bottom of the block and gives it a white background
+
+?>
+<div class="hero-banner">
+    <video muted autoplay loop id="hero-banner__video">
+        <source src="<?php echo $block->getViewFileUrl('videos/hero-video.mp4'); ?>" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="hero-banner__inner">
+        <div class="container">
+
+            <h1 class="text-extra-bold">Welcome to Shark.</h1>
+            <p class="text-semi-bold">Where innovation is right at home.</p>
+
+            <a href="#" class="btn">Shop now</a>
+        </div>
+    </div>
+</div>

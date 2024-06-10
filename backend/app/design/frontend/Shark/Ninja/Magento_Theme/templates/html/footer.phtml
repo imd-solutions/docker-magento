@@ -1,0 +1,118 @@
+<?php
+
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<section class="footer-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-12 col-lg-12 col-xl-3">
+                <div class="row">
+                    <div class="col-12 col-md-5 col-lg-5 col-xl-12">
+                        <div class="footer-logo"></div>
+                        <h3 class="text-bold text-white text-xl pe-4">Where innovation<br />is right at home.</h3>
+                        <hr class="spacer-hr hideOn1200" />
+                    </div>
+                    <div class="col-12 col-md-7 col-lg-7 col-xl-12">
+                        <div class="block newsletter">
+                            <div class="content">
+                                <h2 class="text-white text-xl text-bold"><strong><?= $block->escapeHtml(__('Join our mailing list')) ?></strong></h2>
+                                <p class="text-white text-sm text-light lineheight-21"><?= $block->escapeHtml(__('Keep me updated with offers, rewards and what\'s new at Shark - Enjoy 10% off your next purchase* when you sign up for emails')) ?></p>
+                                <form class="form subscribe" novalidate action="<?= $block->escapeUrl($block->getFormActionUrl()) ?>" method="post" data-mage-init='{"validation": {"errorClass": "mage-error"}}' id="newsletter-validate-detail">
+                                    <div class="field newsletter">
+                                        <div class="control">
+                                            <label for="newsletter">
+                                                <span class="label">
+                                                    <?= $block->escapeHtml(__('Sign Up for Our Newsletter:')) ?>
+                                                </span>
+                                                <input name="email" type="email" id="newsletter" placeholder="<?= $block->escapeHtml(__('Enter your email address')) ?>" data-mage-init='{"mage/trim-input":{}}' data-validate="{required:true, 'validate-email':true}" />
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="actions">
+                                        <button class="action subscribe btn btn-white-outline" title="<?= $block->escapeHtmlAttr(__('Subscribe')) ?>" type="submit" aria-label="Subscribe">
+                                            <span><?= $block->escapeHtml(__('Submit')) ?></span>
+                                        </button>
+                                    </div>
+                                </form>
+                                <p class="text-sm text-light"><?= $block->escapeHtml(__('*Offer valid for new email subscribers only')) ?></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4 col-lg-4 col-xl-3">
+                <div class="section">
+                    <h2 class="footer-title text-xl"><?= $block->escapeHtml(__('About Us')) ?></h2>
+                    <a class="footer-link" href="<?= $block->getUrl('about-us') ?>"><?= $block->escapeHtml(__('About Us')) ?></a><br>
+                    <a class="footer-link" href="#"><?= $block->escapeHtml(__('Black Friday')) ?></a><br>
+                    <a class="footer-link" href="#"><?= $block->escapeHtml(__('Reviews')) ?></a><br>
+                    <a class="footer-link" href="#"><?= $block->escapeHtml(__('Cleaning Tips & Advice')) ?></a><br>
+                    <a class="footer-link" href="#"><?= $block->escapeHtml(__('SharkNinja Careers')) ?></a><br>
+                    <a class="footer-link" href="#"><?= $block->escapeHtml(__('Work With Us')) ?></a><br>
+                    <a class="footer-link" href="<?= $block->getUrl('pragmaticd/termspage/conditions') ?>"><?= $block->escapeHtml(__('Terms and Conditions')) ?></a><br>
+                    <a class="footer-link" href="<?= $block->getUrl('pragmaticd/privacynotice/notice') ?>"><?= $block->escapeHtml(__('Privacy Notice')) ?></a><br>
+                    <a class="footer-link" href="#"><?= $block->escapeHtml(__('Connected Devices Privacy Notice')) ?></a><br>
+                    <a class="footer-link" href="#"><?= $block->escapeHtml(__('UK Modern Slavery Statement')) ?></a><br>
+                    <a class="footer-link" href="#"><?= $block->escapeHtml(__('Gender Pay Gap - 2021/22')) ?></a><br>
+                    <a class="footer-link" href="#"><?= $block->escapeHtml(__('Gender Pay Gap - 2022/23')) ?></a><br>
+                    <a class="footer-link" href="#"><?= $block->escapeHtml(__('Consumer Rights')) ?></a><br>
+                    <a class="footer-link" href="#"><?= $block->escapeHtml(__('Vulnerability Disclosure Policy')) ?></a><br>
+                    <a class="footer-link" href="<?= $block->getUrl('pragmaticd/cookienotice/notice') ?>"><?= $block->escapeHtml(__('Cookie Notice')) ?></a><br>
+                    <a class="footer-link" href="#"><?= $block->escapeHtml(__('Cookie Settings')) ?></a><br>
+                    <a class="footer-link" href="#"><?= $block->escapeHtml(__('Media Enquiries')) ?></a><br>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 col-lg-4 col-xl-3">
+                <div class="section">
+                    <h2 class="footer-title text-xl"><?= $block->escapeHtml(__('Orders & Payments')) ?></h2>
+                    <a class="footer-link" href="<?= $block->getUrl('pragmaticd/deliveryinfopage/returns') ?>"><?= $block->escapeHtml(__('Delivery & Returns')) ?></a><br>
+                    <a class="footer-link" href="#"><?= $block->escapeHtml(__('PayPal Credit')) ?></a><br>
+                    <a class="footer-link" href="#"><?= $block->escapeHtml(__('Klarna')) ?></a><br>
+                    <a class="footer-link" href="#"><?= $block->escapeHtml(__('Price Match Guarantee')) ?></a><br>
+                    <a class="footer-link" href="#"><?= $block->escapeHtml(__('Guarantee')) ?></a><br>
+                    <a class="footer-link" href="#"><?= $block->escapeHtml(__('Discount')) ?></a><br>
+                    <a class="footer-link" href="#"><?= $block->escapeHtml(__('Student Discount')) ?></a>
+                </div>
+                <hr class="hideOnMobile" />
+                <div class="section">
+                    <h2 class="footer-title text-xl"><?= $block->escapeHtml(__('Technology')) ?></h2>
+                    <a class="footer-link" href="#"><?= $block->escapeHtml(__('Anti-Hair Wrap')) ?></a><br>
+                    <a class="footer-link" href="#"><?= $block->escapeHtml(__('DuoClean')) ?></a><br>
+                    <a class="footer-link" href="#"><?= $block->escapeHtml(__('Powerfins')) ?></a><br>
+                    <a class="footer-link" href="#"><?= $block->escapeHtml(__('Anti-Allergen')) ?></a><br>
+                    <a class="footer-link" href="#"><?= $block->escapeHtml(__('Shark Stratos')) ?></a><br>
+                    <a class="footer-link" href="#"><?= $block->escapeHtml(__('Flexology')) ?></a><br>
+                    <a class="footer-link" href="#"><?= $block->escapeHtml(__('Coming soon')) ?></a>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4 col-lg-4 col-xl-3">
+                <div class="section">
+                    <h2 class="footer-title text-xl"><?= $block->escapeHtml(__('My Shark')) ?></h2>
+                    <a class="footer-link" href="<?= $block->getUrl('customer/account/create/') ?>"><?= $block->escapeHtml(__('Register My Guarantee')) ?></a><br>
+                    <a class="footer-link" href="<?= $block->getUrl('customer/account/login') ?>"><?= $block->escapeHtml(__('Log in')) ?></a>
+                </div>
+                <hr class="hideOnMobile" />
+                <div class="section last-section">
+                    <h2 class="footer-title text-xl"><?= $block->escapeHtml(__('Need Help?')) ?></h2>
+                    <a class="footer-link" href="<?= $block->getUrl('customer-service') ?>"><?= $block->escapeHtml(__('Customer Care')) ?></a><br>
+                    <a class="footer-link" href="<?= $block->getUrl('contact') ?>"><?= $block->escapeHtml(__('Contact Us')) ?></a><br>
+                    <a class="footer-link" href="#"><?= $block->escapeHtml(__('Parts & Accessories')) ?></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Customer/js/block-submit-on-send": {
+                "formId": "newsletter-validate-detail"
+            }
+        }
+    }
+</script>

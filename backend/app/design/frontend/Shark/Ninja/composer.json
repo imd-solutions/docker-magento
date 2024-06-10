@@ -1,0 +1,15 @@
+{
+    "name": "pragmaticdigital/theme-custom",
+    "description": "Pragmatic Digital Custom Theme",
+    "require": {
+        "magento/framework": "*"
+    },
+    "type": "magento2-theme",
+    "version": "100.0.1",
+    "license": "proprietary",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ]
+    }
+}

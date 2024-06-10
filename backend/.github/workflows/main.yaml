@@ -1,0 +1,23 @@
+# workflow that connects to server with ssh and then runs commands
+name: Deploy to server
+
+on:
+  push:
+    branches:
+      - staging
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+    
+jobs: 
+  deploy:
+    name: Deploy to staging
+    runs-on: self-hosted
+    if: contains( github.ref, 'staging')
+    steps:
+      - uses: actions/checkout@v2
+      -   run: ssh -o StrictHostKeyChecking=no -i /home/ec2-user/.ssh/snm2_staging.pem ${{ secrets.STAGING_USERNAME }}@${{ secrets.STAGING_HOST }} "cd /bitnami/magento/ && php bin/magento maintenance:enable"
+      -   run: ssh -o StrictHostKeyChecking=no -i /home/ec2-user/.ssh/snm2_staging.pem ${{ secrets.STAGING_USERNAME }}@${{ secrets.STAGING_HOST }} "cd /bitnami/magento/ && git checkout staging && git pull && composer install"
+      -   run: ssh -o StrictHostKeyChecking=no -i /home/ec2-user/.ssh/snm2_staging.pem ${{ secrets.STAGING_USERNAME }}@${{ secrets.STAGING_HOST }} "cd /bitnami/magento/ && php bin/magento setup:install && php bin/magento setup:upgrade"
+      -   run: ssh -o StrictHostKeyChecking=no -i /home/ec2-user/.ssh/snm2_staging.pem ${{ secrets.STAGING_USERNAME }}@${{ secrets.STAGING_HOST }} "cd /bitnami/magento/ && php bin/magento setup:di:compile && php bin/magento setup:static-content:deploy"
+      -   run: ssh -o StrictHostKeyChecking=no -i /home/ec2-user/.ssh/snm2_staging.pem ${{ secrets.STAGING_USERNAME }}@${{ secrets.STAGING_HOST }} "cd /bitnami/magento/ && php bin/magento cache:clean && php bin/magento cache:flush && php bin/magento maintenance:disable"

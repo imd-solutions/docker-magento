@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category PragmaticDigitalTech
+ * @package PragmaticDigitalTech_PopupContent
+ * @version 1.0.0
+ * @copyright Copyright (c) 2022 PragmaticDigitalTech Company. All Rights Reserved.
+ * @license - Copyrighted Commercial Software
+ * @author PragmaticDigitalTech Company <contact@pragmaticdigitaltech.com>
+ * @link https://pragmaticdigitaltech.com
+ */
+-->
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="page.bottom">
+            <block class="PragmaticDigitalTech\PopupContent\Block\Content" name="popup.content"
+                   ifconfig="popupcontent/pc_general/enable_popupcontent">
+                <action method="setTemplate">
+                    <argument name="template" xsi:type="helper"
+                              helper="PragmaticDigitalTech\PopupContent\Helper\Data::getTemplate">
+                    </argument>
+                </action>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

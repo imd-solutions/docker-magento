@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Magento\Checkout\Block\Onepage" name="checkout.root" template="Magento_Checkout::onepage.phtml">
+                <container name="checkout.container">
+                    <!-- Cart Step -->
+                    <block class="Magento\Checkout\Block\Cart" name="checkout.cart" template="Magento_Checkout::cart.phtml"/>
+
+                    <!-- Shipping Step -->
+                    <block class="Magento\Checkout\Block\Onepage\Shipping" name="checkout.shipping" template="Magento_Checkout::onepage/shipping.phtml"/>
+
+                    <!-- Review and Payment Step -->
+                    <block class="Magento\Checkout\Block\Onepage\Review" name="checkout.review" template="Magento_Checkout::onepage/review.phtml"/>
+                </container>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

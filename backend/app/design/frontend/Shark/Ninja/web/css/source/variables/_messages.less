@@ -1,0 +1,61 @@
+// © 2024 Pragmatic Digital UK. 
+
+@message__padding: 15px 15px;
+@message__border-radius: 8px;
+@message__border-width: 1px;
+@message__border-style: solid;
+@message__border-radius: 8px;
+@message__font-weight: @font-weight__heavier;
+
+//  Information message
+@message-info__color: @color__form__note;
+@message-info__background:  @page__background-color;
+@message-info__border-color: @color__form__note;
+
+@message-info-icon: false;
+
+//  Warning message
+@message-warning__color: @color__form__notice;
+@message-warning__background:  @page__background-color;
+@message-warning__border-color: @color__form__notice;
+
+@message-warning-icon: false;
+
+//  Error message
+@message-error__color: @error__color;
+@message-error__background:  @page__background-color;
+@message-error__border-color: @message__border-color;
+
+@message-error-icon: false;
+
+//  Success message
+@message-success__color: @color__form__valid;
+@message-success__background:  @page__background-color;
+@message-success__border-color: @color__form__valid;
+
+@message-success-icon: false;
+
+//  Notice message
+@message-notice__color: @color__form__notice;
+@message-notice__background: @page__background-color;
+@message-notice__border-color: @color__form__notice;
+
+@message-notice-icon: false;
+
+
+// Module overrides
+@message-global-note__background:  @page__background-color;
+@message-global-note__border-color: @message-warning__border-color;
+@message-global-note__color: @text__color;
+
+@message-global-note-link__color: @link__color;
+@message-global-note-link__color-hover: @link__hover__color;
+@message-global-note-link__color-active: @link__active__color;
+
+@message-global-caution__background:  @page__background-color;
+@message-global-caution__border-color: @message-notice__background;
+@message-global-caution__color: @message-notice__color;
+
+@message-global-caution-link__color: @link__color;
+@message-global-caution-link__color-hover: @link__hover__color;
+@message-global-caution-link__color-active: @link__active__color;

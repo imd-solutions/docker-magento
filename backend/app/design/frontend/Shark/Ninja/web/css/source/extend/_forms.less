@@ -1,0 +1,466 @@
+// © 2024 Pragmatic Digital UK.
+@custom-icon-font: @font-family__main;
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none !important;
+}
+
+.fieldset {
+    >.field:not(.choice) {
+        >.label {
+            text-transform: @form-field-label__text-transform;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding: @form-field-type-label-block__margin;
+        }
+    }
+}
+
+.field.note {
+    font-family: @form-field-note__font-family;
+    font-size: @form-field-note__font-size;
+}
+
+
+//  Checkbox Styling
+//  _________________________________________
+.checkbox-styling(@_size-width: 24px, @_size-height: 24px, @_font-size: 24px, @_margin-top: 0) {
+    .lib-visually-hidden();
+
+    &+label,
+    &+.label {
+        cursor: pointer;
+        color: @form-field-label__color;
+    }
+
+    &+label:before,
+    &+.label:before {
+        content: "";
+        border: @border-width__base solid @form-element-checkbox__border-color;
+        background: @color-white;
+        width: @_size-width;
+        height: @_size-height;
+        cursor: pointer;
+        display: block;
+        margin: 0 9px 0 0;
+        margin-top: @_margin-top;
+        font-size: @_font-size;
+    }
+
+    &:hover+label:before,
+    &:hover+.label:before {
+        border: 1px solid @form-field-label__color;
+    }
+
+    &:checked+label:before,
+    &:checked+.label:before {
+        content: @icon-tick;
+        font-family: @custom-icon-font;
+        font-size: @_font-size;
+        background: @page__background-color;
+        color: @form-field-label__color;
+        line-height: @_size-height;
+        text-align: center;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+.fieldset>.field.choice:before {
+    display: none;
+}
+
+//  Select Styling
+//  _________________________________________
+.select-styling() {
+    .lib-css(appearance, none, 1);
+    appearance: none;
+    background: url(../images/arrow-select.svg) @page__background-color no-repeat;
+    background-position: 100% 50%;
+    background-size: 20px;
+    height: 25px;
+    padding: @select__padding;
+    line-height: @select__line-height;
+    border: none;
+    border-bottom: solid 1px @c-input-border;
+    margin: @form-field-type-label-block__margin;
+
+    &::-ms-expand {
+        display: none;
+    }
+
+    .lt-ie10 & {
+        background-image: none;
+        padding-right: 4px;
+    }
+
+    &:focus {
+        border: none;
+        border-bottom: 1px solid @c-dark-grey;
+    }
+}
+
+//  Text Area Styling
+//  _________________________________________
+.text-area-styling() {
+    padding: 30px;
+    font-size: @font-size__xs;
+    border-color: @form-element-textarea__border-color;
+}
+
+//  Radio buttin Styling
+//  _________________________________________
+.radiobtn-styling(@_outer-size: 24px, @_inner-size: 12px, @_inner-top: 8px, @_inner-left: 6px) {
+    input[type="radio"] {
+        .lib-visually-hidden();
+
+        &+label {
+            padding-left: 30px;
+            padding-top: 3px;
+            cursor: pointer;
+            vertical-align: middle;
+            display: inline-block;
+            line-height: inherit;
+            position: relative;
+
+            &:before {
+                content: '';
+                background: #fff;
+                display: block;
+                width: @_outer-size;
+                height: @_outer-size;
+                border-radius: 50%;
+                border: 1px solid @color__form-field-label-color;
+                position: absolute;
+                left: 0;
+                top: 2px;
+            }
+        }
+
+        &:checked {
+            &+label {
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: @_inner-top;
+                    left: @_inner-left;
+                    height: @_inner-size;
+                    width: @_inner-size;
+                    border-radius: 50%;
+                    background: @color__form-field-label-color;
+                }
+
+                &:before {
+                    border: 1px solid @form-element-checkbox__border-color;
+                }
+            }
+        }
+
+        &:hover {
+            &+label {
+                &:before {
+                    border: 1px solid @form-element-checkbox__border-color;
+                }
+            }
+        }
+    }
+}
+
+.mult-select-styling() {
+    padding: 10px 0;
+
+    option {
+        padding: 10px;
+
+        &:nth-child(odd) {
+            background-color: @color__form-border;
+        }
+    }
+}
+
+
+//
+//                                         Common
+//  _____________________________________________
+
+& when (@media-common =true) {
+
+    input[type="text"],
+    input[type="password"],
+    input[type="url"],
+    input[type="tel"],
+    input[type="search"],
+    input[type="number"],
+    input[type="datetime"],
+    input[type="email"] {
+        border-radius: @form-element-input__border-radius;
+        background-color: transparent;
+        border: none;
+        border-bottom: solid 1px @c-input-border;
+        margin: @form-field-type-label-block__margin;
+
+        &::placeholder {
+            color: @c-dark-grey;
+        }
+
+        &:focus {
+            border: none;
+            border-bottom: 1px solid @c-dark-grey;
+        }
+    }
+
+    .form {
+        // Specific styles to reset autofill styling
+
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill:active {
+            box-shadow: 0 0 0 48px @page__background-color inset !important;
+        }
+
+        input:-webkit-autofill {
+            -webkit-text-fill-color: @c-dark-grey !important;
+        }
+    }
+
+    .fieldset {
+        >.legend {
+            .lib-visually-hidden();
+        }
+    }
+
+    .fieldset>.field>.label,
+    .fieldset>.fields>.field>.label {
+        letter-spacing: @form-field-label__letter-spacing;
+    }
+
+    .custom-placeholder(@color__form__placeholder);
+
+    input[type="checkbox"] {
+        .checkbox-styling(19px, 19px, @font-size__xxxxs, 0);
+    }
+
+    .field {
+        &.choice {
+            input[type="checkbox"] {
+                +label {
+                    display: block;
+                    padding-left: 35px;
+                    position: relative;
+                    font-family: "Proxima Nova" sans-serif;
+                    font-size: @font-size__m;
+
+                    &:before {
+                        content: '';
+                        -webkit-appearance: none;
+                        background-color: transparent;
+                        border: 2px solid @c-pink;
+                        padding: 10px;
+                        display: inline-block;
+                        position: relative;
+                        vertical-align: middle;
+                        cursor: pointer;
+                        margin-right: 5px;
+                        border-radius: 50%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                    }
+                }
+
+                &:checked {
+                    +label {
+                        &:after {
+                            content: '';
+                            display: block;
+                            position: absolute;
+                            top: -2px;
+                            left: 12px;
+                            width: 7px;
+                            height: 18px;
+                            border: solid @c-pink;
+                            border-width: 0 2px 2px 0;
+                            transform: rotate(45deg);
+                            margin: 0 !important;
+                        }
+                    }
+                }
+            }
+
+            .label {
+                display: inline-block !important;
+                font-size: @font-size__m;
+            }
+        }
+    }
+
+    select {
+        .select-styling();
+    }
+
+    select[multiple] {
+        .mult-select-styling();
+    }
+
+    textarea {
+        .text-area-styling()
+    }
+
+
+    //  Validation
+    //  ---------------------------------------------
+    .field-error,
+    div.mage-error[generated] {
+        margin-top: 8px;
+        font-size: @font-size__s;
+        font-family: "Proxima Nova" sans-serif;
+    }
+
+    .fieldset {
+        .field {
+
+            .error,
+            ._error,
+            &._error {
+
+                input,
+                select {
+                    border-color: @color-error;
+                }
+            }
+
+            .valid {
+
+                input,
+                select {
+                    border-color: @color-success;
+                }
+            }
+
+            .control {
+                position: relative;
+
+                input:-webkit-autofill,
+                input:-webkit-autofill:hover,
+                input:-webkit-autofill:focus,
+                textarea:-webkit-autofill,
+                textarea:-webkit-autofill:hover,
+                textarea:-webkit-autofill:focus {
+                    -webkit-box-shadow: 0 0 0 1000px @form-element-input__background inset;
+                    transition: background-color 5000s ease-in-out 0s;
+                }
+            }
+
+            &.date {
+                .control {
+
+                    &.error,
+                    &.valid {
+                        &:after {
+                            right: 57px;
+                        }
+                    }
+                }
+            }
+
+            &.choice {
+                position: relative;
+                .radiobtn-styling();
+            }
+        }
+    }
+
+    .password-strength-meter {
+        background: none;
+        font-family: "Proxima Nova" sans-serif;
+        height: auto;
+        padding: 8px;
+    }
+
+    .password-weak,
+    .password-medium,
+    .password-strong {
+        .password-strength-meter {
+            &:before {
+                width: 100%;
+            }
+        }
+    }
+
+    //  Tooltips
+    //  ---------------------------------------------
+    .field .control._with-tooltip {
+        input {
+            margin-right: 0;
+            width: 100%;
+        }
+
+        .field-tooltip {
+            cursor: pointer;
+            position: absolute;
+            right: 0;
+            top: -24px;
+
+            .field-tooltip-action:before {
+                font-size: 20px;
+                line-height: 20px;
+                color: @color__form__placeholder;
+            }
+        }
+    }
+
+    // Datepicker input
+    @icon-calendar__font-size: 60px;
+
+    .control {
+        input._has-datepicker {
+            margin-right: 10px;
+            width: calc(~'100% -'@icon-calendar__font-size + @indent__s);
+        }
+    }
+
+}
+
+
+//
+//                                       Tablet +
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
+
+    .fieldset {
+        .legend {
+            margin-left: 0;
+        }
+
+        .field {
+            &.choice {
+                .radiobtn-styling(20px, 8px, 8px, 6px);
+            }
+
+            &.street {
+                &+.street {
+                    >.control {
+                        left: @form-field-type-label-inline__width;
+                    }
+                }
+            }
+        }
+    }
+
+    .field-tooltip {
+        .field-tooltip-content {
+            &:after {
+                left: -20px;
+            }
+        }
+    }
+}

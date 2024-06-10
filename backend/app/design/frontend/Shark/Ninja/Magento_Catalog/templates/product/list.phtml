@@ -1,0 +1,97 @@
+<?php /** * Copyright © Magento, Inc. All rights reserved. * See COPYING.txt for license details. */
+
+use Magento\Framework\App\Action\Action;
+?>
+
+<?php
+/**
+ * Product list template *
+ * @var $block \Magento\Catalog\Block\Product\ListProduct
+ * @var \Magento\Framework\Escaper $escaper
+ * @var \Magento\Framework\View\Helper\SecureHtmlRenderer $secureRenderer
+ */
+?>
+
+<style>
+.catalog-category-view #maincontent {
+    padding: 48px 88px;
+    background-color: var(--gray-200) !important;
+}
+
+img.img-fluid.product-card-cat__image {
+    display: block!important;
+}
+
+</style>
+<?php $_productCollection = $block->getLoadedProductCollection(); /** @var \Magento\Catalog\Helper\Output $_helper */ $_helper = $block->getData('outputHelper'); ?>
+<?php if (!$_productCollection->count()): ?>
+<div class="message info empty">
+    <div><?= $escaper->escapeHtml(__('We can\'t find products matching the selection 4.')) ?></div>
+</div>
+<?php else: ?>
+<?= $block->getToolbarHtml() ?>
+<?= $block->getAdditionalHtml() ?>
+<?php if ($block->getMode() === 'grid') { $viewMode = 'grid'; $imageDisplayArea = 'category_page_grid'; $showDescription = false; $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::SHORT_VIEW; } else { $viewMode =
+'list'; $imageDisplayArea = 'category_page_list'; $showDescription = true; $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::FULL_VIEW; } /** * Position for actions regarding image size changing in vde if needed */
+$pos = $block->getPositioned(); ?>
+<div class="margin products wrapper <?= /* @noEscape */ $viewMode ?> products-<?= /* @noEscape */ $viewMode ?>">
+    <ol class="products list items product-items">
+        <?php /** @var $_product \Magento\Catalog\Model\Product */ ?>
+        <?php foreach (range(1, 12) as $_): ?>
+        <li class="item product product-item">
+                            <div class="item">
+                    <div class="inner-slide">
+                        <div class="product-card-cat" onclick="location.href='/your-product-url'">
+
+                            <img src="<?= $block->getViewFileUrl('images/product-slider/image(23).png') ?>" alt="Shark FlexStyle® 5-in-1 Air Styler & Hair Dryer with Storage Case - Black/Rose Gold " class="img-fluid product-card-cat__image" />
+                            <div class="product-card-cat__inner">
+                                <div class="product-card-cat__title">
+                                    <h4 class="text-semi-bold text-sm"><?= $block->escapeHtml(__('Shark FlexStyle® 5-in-1 Air Styler & Hair Dryer with Storage Case - Black/Rose Gold ')) ?></h4>
+                                </div>
+                                <div class="product-card-cat__rating">
+                                    <svg class="custom-star" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                    <path d="M5.44254 0.712134C5.64879 0.222257 6.35124 0.222258 6.55749 0.712135L7.77475 3.60347C7.86175 3.81 8.05835 3.9511 8.28402 3.96898L11.4436 4.21922C11.979 4.26162 12.196 4.92162 11.7882 5.26678L9.38089 7.30394C9.20896 7.44948 9.13382 7.67781 9.18636 7.89535L9.92182 10.9414C10.0464 11.4574 9.47816 11.8654 9.01982 11.5888L6.31474 9.95648C6.12152 9.83988 5.87851 9.83988 5.6853 9.95648L2.9802 11.5888C2.52187 11.8654 1.95358 11.4574 2.07819 10.9414L2.81366 7.89535C2.86619 7.67781 2.7911 7.44948 2.61916 7.30394L0.211838 5.26678C-0.196031 4.92162 0.0210408 4.26162 0.556376 4.21922L3.71602 3.96898C3.94171 3.9511 4.1383 3.81 4.22525 3.60347L5.44254 0.712134Z" fill="#FFBF0F"/>
+                                    </svg>
+                                    <svg class="custom-star" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                    <path d="M5.44254 0.712134C5.64879 0.222257 6.35124 0.222258 6.55749 0.712135L7.77475 3.60347C7.86175 3.81 8.05835 3.9511 8.28402 3.96898L11.4436 4.21922C11.979 4.26162 12.196 4.92162 11.7882 5.26678L9.38089 7.30394C9.20896 7.44948 9.13382 7.67781 9.18636 7.89535L9.92182 10.9414C10.0464 11.4574 9.47816 11.8654 9.01982 11.5888L6.31474 9.95648C6.12152 9.83988 5.87851 9.83988 5.6853 9.95648L2.9802 11.5888C2.52187 11.8654 1.95358 11.4574 2.07819 10.9414L2.81366 7.89535C2.86619 7.67781 2.7911 7.44948 2.61916 7.30394L0.211838 5.26678C-0.196031 4.92162 0.0210408 4.26162 0.556376 4.21922L3.71602 3.96898C3.94171 3.9511 4.1383 3.81 4.22525 3.60347L5.44254 0.712134Z" fill="#FFBF0F"/>
+                                    </svg>
+                                    <svg class="custom-star" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                    <path d="M5.44254 0.712134C5.64879 0.222257 6.35124 0.222258 6.55749 0.712135L7.77475 3.60347C7.86175 3.81 8.05835 3.9511 8.28402 3.96898L11.4436 4.21922C11.979 4.26162 12.196 4.92162 11.7882 5.26678L9.38089 7.30394C9.20896 7.44948 9.13382 7.67781 9.18636 7.89535L9.92182 10.9414C10.0464 11.4574 9.47816 11.8654 9.01982 11.5888L6.31474 9.95648C6.12152 9.83988 5.87851 9.83988 5.6853 9.95648L2.9802 11.5888C2.52187 11.8654 1.95358 11.4574 2.07819 10.9414L2.81366 7.89535C2.86619 7.67781 2.7911 7.44948 2.61916 7.30394L0.211838 5.26678C-0.196031 4.92162 0.0210408 4.26162 0.556376 4.21922L3.71602 3.96898C3.94171 3.9511 4.1383 3.81 4.22525 3.60347L5.44254 0.712134Z" fill="#FFBF0F"/>
+                                    </svg>
+                                    <svg class="custom-star" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                    <path d="M5.44254 0.712134C5.64879 0.222257 6.35124 0.222258 6.55749 0.712135L7.77475 3.60347C7.86175 3.81 8.05835 3.9511 8.28402 3.96898L11.4436 4.21922C11.979 4.26162 12.196 4.92162 11.7882 5.26678L9.38089 7.30394C9.20896 7.44948 9.13382 7.67781 9.18636 7.89535L9.92182 10.9414C10.0464 11.4574 9.47816 11.8654 9.01982 11.5888L6.31474 9.95648C6.12152 9.83988 5.87851 9.83988 5.6853 9.95648L2.9802 11.5888C2.52187 11.8654 1.95358 11.4574 2.07819 10.9414L2.81366 7.89535C2.86619 7.67781 2.7911 7.44948 2.61916 7.30394L0.211838 5.26678C-0.196031 4.92162 0.0210408 4.26162 0.556376 4.21922L3.71602 3.96898C3.94171 3.9511 4.1383 3.81 4.22525 3.60347L5.44254 0.712134Z" fill="#FFBF0F"/>
+                                    </svg>
+                                    <svg class="custom-star" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.9358 4.55359L11.9836 4.70359C12.023 4.8168 11.9899 4.94263 11.8999 5.02159L8.99191 7.5116L9.85351 11.2436C9.88267 11.3629 9.83791 11.4881 9.73981 11.5616L9.60817 11.6516C9.55705 11.6918 9.49363 11.713 9.42871 11.7116C9.37387 11.7127 9.31993 11.6982 9.27313 11.6696L6.00012 9.6716L2.74508 11.6696C2.69828 11.6982 2.6443 11.7127 2.58951 11.7116C2.52456 11.713 2.46113 11.6918 2.41 11.6516L2.26041 11.5616C2.16231 11.4881 2.11755 11.3629 2.14672 11.2436L3.00835 7.5116L0.106343 5.02759C0.0117047 4.9491 -0.0241186 4.81978 0.0165898 4.70359L0.0824086 4.55359C0.117405 4.43504 0.222622 4.35112 0.345684 4.34359L4.16916 4.03759L5.63512 0.50359C5.6821 0.386227 5.79623 0.30993 5.92234 0.31159H6.07789C6.20287 0.308931 6.31579 0.386019 6.35911 0.50359L7.84903 4.03759L11.6725 4.34359C11.7956 4.35112 11.9008 4.43504 11.9358 4.55359ZM8.46535 9.9476L7.79521 7.1396L9.99115 5.26159L7.11307 5.03359L6.00012 2.35759V8.4416L8.46535 9.9476Z" fill="#FFBF0F"/>
+                                    </svg>
+
+                                    <span class="text-bold text-lg product-card-cat__rating">4.4
+                                        <a href="#">(234)</a>
+                                    </span>
+                                </div>
+                                <div class="product-card-cat__price">
+                                    <span class="text-xl text-bold">
+                                        د.إ1635.85
+                                    </span>
+                                </div>
+                                <div class="product-card-cat__stack">
+                                    <div class="product-card-cat__paypal"></div>
+                                    <div class="product-card-cat__title-paypal">
+                                    from د.إ126.51/month
+                                    </div>
+                                </div>
+
+                                <a href="#" class="btn btn-black product-card-cat__btn btn-sm">Add to cart</a>
+                                <a href="#" class="product-card-cat__details">See product details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </li>
+        <?php endforeach; ?>
+    </ol>
+</div>
+<?= $block->getChildBlock('toolbar')->setIsBottom(true)->toHtml() ?>
+<?php ?>
+<?php endif; ?>
+

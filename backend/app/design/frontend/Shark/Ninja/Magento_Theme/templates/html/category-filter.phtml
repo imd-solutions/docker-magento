@@ -1,0 +1,134 @@
+<?php
+$_menuHtml    = $block->getHtml('level-top', 'submenu', 2);
+?>
+
+<style>
+.custom-checkbox-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.custom-checkbox-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.custom-checkbox {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 3px;
+  position: relative;
+}
+
+.custom-checkbox:checked {
+  background-color: #000;
+}
+
+.custom-checkbox:checked::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 7px;
+  background: url('data:image/svg+xml,%3Csvg xmlns%3D%22http%3A//www.w3.org/2000/svg%22 width%3D%2210%22 height%3D%227%22 viewBox%3D%220 0 10 7%22 fill%3D%22none%22%3E%3Cpath d%3D%22M1 3.34619L4 6.34619L9 1.34619%22 stroke%3D%22white%22 stroke-linecap%3D%22round%22 stroke-linejoin%3D%22round%22/%3E%3C/svg%3E') no-repeat center;
+  transform: translate(-50%, -50%);
+}
+
+.custom-label {
+  margin-top: 6px;
+  margin-left: 4px;
+  align-self: center;
+}
+
+.number {
+  margin-top: 2px;
+  margin-left: auto;
+  font-weight: bold;
+}
+
+</style>
+<div class="sn-mobile-menu-filters">
+  <div class="sn-mobile-menu-filters__header">
+    <div class="sn-mobile-menu-filters__header__title">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M13.0554 3H1.94434L6.38878 8.25556V11.8889L8.611 13V8.25556L13.0554 3Z" stroke="white" stroke-width="1.11111" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+      <span>Filters</span>
+    </div>
+    <button class="sn-mobile-menu-filters__header__close close-filters">
+      <span class="close-content">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+          <path d="M1 1.39355L15.1421 15.5357" stroke="white" stroke-linecap="round" />
+          <path d="M1 15.6069L15.1421 1.4648" stroke="white" stroke-linecap="round" />
+        </svg>
+        <span>Close</span>
+      </span>
+    </button>
+  </div>
+  <div class="sn-mobile-menu-filters__scroll">
+    <div class="sn-mobile-menu-filters__menu">
+      <div class="block-content filter-content-filters">
+        <dl class="filter-options" id="narrow-by-list">
+          <dt role="heading" aria-level="3" class="filter-options_title cat-name">Category</dt>
+          <dd class="filter-options-content">
+          <div class="custom-checkbox-container">
+            <div class="custom-checkbox-item">
+              <input type="checkbox" id="checkbox1" class="custom-checkbox">
+              <label for="checkbox1" class="custom-label">Hair Dryers</label>
+              <span class="number">1</span>
+            </div>
+            <div class="custom-checkbox-item">
+              <input type="checkbox" id="checkbox2" class="custom-checkbox">
+              <label for="checkbox2" class="custom-label">Hair</label>
+              <span class="number">1</span>
+            </div>
+            <div class="custom-checkbox-item">
+              <input type="checkbox" id="checkbox3" class="custom-checkbox">
+              <label for="checkbox3" class="custom-label">name</label>
+              <span class="number">1</span>
+            </div>
+          </div>
+
+          </dd>
+          <dt role="heading" aria-level="3" class="filter-options_title cat-name">Hair Type</dt>
+          <dd class="filter-options-content">Placeholder for Collection</dd>
+          <dt role="heading" aria-level="3" class="filter-options_title cat-name">Collection</dt>
+          <dd class="filter-options-content">Placeholder for Collection</dd>
+          <dt role="heading" aria-level="3" class="filter-options_title cat-name">Price</dt>
+          <dd class="filter-options-content">Placeholder for Collection</dd>
+        </dl>
+      </div>
+    </div>
+    <div class="sn-mobile-menu-filters__subnav bottom-filters">
+        Applied Filters (0)
+    </div>
+  </div>
+</div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    function toggleDropdown(element) {
+        console.log("this has been clicked");
+        var dropdown = element.nextElementSibling;
+        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        console.log('dropdown :>> ', dropdown);
+        element.classList.toggle('active');
+    }
+
+    var catNames = document.querySelectorAll('.cat-name');
+    catNames.forEach(function(catName) {
+        catName.addEventListener('click', function() {
+            toggleDropdown(this);
+        });
+    });
+});
+</script>

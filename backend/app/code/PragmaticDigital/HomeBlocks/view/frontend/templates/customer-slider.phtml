@@ -1,0 +1,82 @@
+<section class="customer-slider background-gray-200">
+    <div class="container">
+
+
+        <div class="owl-theme title ">
+            <h1 class="owl-main-title"><?= $block->escapeHtml(__('Customer favourites.')) ?></h1>
+
+
+            <div class="slick-in">
+                <div id="customer-slick-slider" data-mage-init='
+                {
+                    "slick": {
+                        "infinite": false,
+                        "dots": true,
+                        "slidesToShow": 1,
+                        "slidesToScroll": 1
+                    }
+                }
+                '>
+
+                    <div class="item">
+                        <div class="row d-flex align-items-left" style="text-align: left !important;">
+                            <div class="col-sm-6">
+
+                                <img src="<?= $block->getViewFileUrl('images/cards/customer_card_1.png') ?>" alt="Customer Review Product" class="rounded-corners-8 customer-slider__img" />
+
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="overall-review">
+                                <svg class="custom-star" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 12 12" fill="none">
+                                    <path d="M5.44254 0.712134C5.64879 0.222257 6.35124 0.222258 6.55749 0.712135L7.77475 3.60347C7.86175 3.81 8.05835 3.9511 8.28402 3.96898L11.4436 4.21922C11.979 4.26162 12.196 4.92162 11.7882 5.26678L9.38089 7.30394C9.20896 7.44948 9.13382 7.67781 9.18636 7.89535L9.92182 10.9414C10.0464 11.4574 9.47816 11.8654 9.01982 11.5888L6.31474 9.95648C6.12152 9.83988 5.87851 9.83988 5.6853 9.95648L2.9802 11.5888C2.52187 11.8654 1.95358 11.4574 2.07819 10.9414L2.81366 7.89535C2.86619 7.67781 2.7911 7.44948 2.61916 7.30394L0.211838 5.26678C-0.196031 4.92162 0.0210408 4.26162 0.556376 4.21922L3.71602 3.96898C3.94171 3.9511 4.1383 3.81 4.22525 3.60347L5.44254 0.712134Z" fill="#FFBF0F"/>
+                                    </svg>
+                                    <svg class="custom-star" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 12 12" fill="none">
+                                    <path d="M5.44254 0.712134C5.64879 0.222257 6.35124 0.222258 6.55749 0.712135L7.77475 3.60347C7.86175 3.81 8.05835 3.9511 8.28402 3.96898L11.4436 4.21922C11.979 4.26162 12.196 4.92162 11.7882 5.26678L9.38089 7.30394C9.20896 7.44948 9.13382 7.67781 9.18636 7.89535L9.92182 10.9414C10.0464 11.4574 9.47816 11.8654 9.01982 11.5888L6.31474 9.95648C6.12152 9.83988 5.87851 9.83988 5.6853 9.95648L2.9802 11.5888C2.52187 11.8654 1.95358 11.4574 2.07819 10.9414L2.81366 7.89535C2.86619 7.67781 2.7911 7.44948 2.61916 7.30394L0.211838 5.26678C-0.196031 4.92162 0.0210408 4.26162 0.556376 4.21922L3.71602 3.96898C3.94171 3.9511 4.1383 3.81 4.22525 3.60347L5.44254 0.712134Z" fill="#FFBF0F"/>
+                                    </svg>
+                                    <svg class="custom-star" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 12 12" fill="none">
+                                    <path d="M5.44254 0.712134C5.64879 0.222257 6.35124 0.222258 6.55749 0.712135L7.77475 3.60347C7.86175 3.81 8.05835 3.9511 8.28402 3.96898L11.4436 4.21922C11.979 4.26162 12.196 4.92162 11.7882 5.26678L9.38089 7.30394C9.20896 7.44948 9.13382 7.67781 9.18636 7.89535L9.92182 10.9414C10.0464 11.4574 9.47816 11.8654 9.01982 11.5888L6.31474 9.95648C6.12152 9.83988 5.87851 9.83988 5.6853 9.95648L2.9802 11.5888C2.52187 11.8654 1.95358 11.4574 2.07819 10.9414L2.81366 7.89535C2.86619 7.67781 2.7911 7.44948 2.61916 7.30394L0.211838 5.26678C-0.196031 4.92162 0.0210408 4.26162 0.556376 4.21922L3.71602 3.96898C3.94171 3.9511 4.1383 3.81 4.22525 3.60347L5.44254 0.712134Z" fill="#FFBF0F"/>
+                                    </svg>
+                                    <svg class="custom-star" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 12 12" fill="none">
+                                    <path d="M5.44254 0.712134C5.64879 0.222257 6.35124 0.222258 6.55749 0.712135L7.77475 3.60347C7.86175 3.81 8.05835 3.9511 8.28402 3.96898L11.4436 4.21922C11.979 4.26162 12.196 4.92162 11.7882 5.26678L9.38089 7.30394C9.20896 7.44948 9.13382 7.67781 9.18636 7.89535L9.92182 10.9414C10.0464 11.4574 9.47816 11.8654 9.01982 11.5888L6.31474 9.95648C6.12152 9.83988 5.87851 9.83988 5.6853 9.95648L2.9802 11.5888C2.52187 11.8654 1.95358 11.4574 2.07819 10.9414L2.81366 7.89535C2.86619 7.67781 2.7911 7.44948 2.61916 7.30394L0.211838 5.26678C-0.196031 4.92162 0.0210408 4.26162 0.556376 4.21922L3.71602 3.96898C3.94171 3.9511 4.1383 3.81 4.22525 3.60347L5.44254 0.712134Z" fill="#FFBF0F"/>
+                                    </svg> 
+                                    <svg class="custom-star" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 12 12" fill="none">
+                                    <path d="M5.44254 0.712134C5.64879 0.222257 6.35124 0.222258 6.55749 0.712135L7.77475 3.60347C7.86175 3.81 8.05835 3.9511 8.28402 3.96898L11.4436 4.21922C11.979 4.26162 12.196 4.92162 11.7882 5.26678L9.38089 7.30394C9.20896 7.44948 9.13382 7.67781 9.18636 7.89535L9.92182 10.9414C10.0464 11.4574 9.47816 11.8654 9.01982 11.5888L6.31474 9.95648C6.12152 9.83988 5.87851 9.83988 5.6853 9.95648L2.9802 11.5888C2.52187 11.8654 1.95358 11.4574 2.07819 10.9414L2.81366 7.89535C2.86619 7.67781 2.7911 7.44948 2.61916 7.30394L0.211838 5.26678C-0.196031 4.92162 0.0210408 4.26162 0.556376 4.21922L3.71602 3.96898C3.94171 3.9511 4.1383 3.81 4.22525 3.60347L5.44254 0.712134Z" fill="#FFBF0F"/>
+                                    </svg> 
+
+                                    <h1 class="owl-title left"><?= $block->escapeHtml(__('“Powerful and helpful.”')) ?></h1>
+                                    <p class="owl-p"><?= $block->escapeHtml(__('Having a vacuum that gets everything at the first pass is extremely helpful. Additionally, being able to empty the canister without having to open it every single time is a game changer.')) ?></p>
+
+                                    <p class="owl-p-small"><strong><?= $block->escapeHtml(__('Username')) ?></strong><br><?= $block->escapeHtml(__('Shark® Cordless Detect Pro™ Auto-Empty System')) ?> </p>
+
+                                    <a href="#" class="btn btn-black btn-sm"><?= $block->escapeHtml(__('Shop Detect Pro™')) ?></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-sm-6">
+
+                                <img src="<?= $block->getViewFileUrl('images/Image.png') ?>" alt="Customer Review Product" class="rounded-corners-8 customer-slider__img" />
+
+                            </div>
+                            <div class="col-sm-6 align-middle">
+                                <div class="overall-review">
+                                    <img src="<?= $block->getViewFileUrl('images/icons/5-stars.png') ?>" alt="5 Gold Stars" class="img-fluid five-stars" />
+
+                                    <h1 class="owl-title left"><?= $block->escapeHtml(__('"Powerful and helpful."')) ?></h1>
+                                    <p class="owl-p"><?= $block->escapeHtml(__('Having a vacuum that gets everything at the first pass is extremely helpful. Additionally, being able to empty the canister without having to open it every single time is a game changer.')) ?></p>
+
+                                    <p class="owl-p-small"><strong><?= $block->escapeHtml(__('Username')) ?></strong><br><?= $block->escapeHtml(__('Shark® Cordless Detect Pro™ Auto-Empty System')) ?> </p>
+
+                                    <a href="#" class="btn btn-black btn-sm"><?= $block->escapeHtml(__('Shop Detect Pro™')) ?></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

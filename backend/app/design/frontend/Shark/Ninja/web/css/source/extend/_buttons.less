@@ -1,0 +1,86 @@
+// © 2024 Pragmatic Digital UK.
+
+.btn {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white);
+    background-color: var(--orange-500);
+    padding: 16px 32px;
+    border-radius: 50px;
+    display: inline-block;
+    text-decoration: none;
+
+    //fix for blue global var added to some other skeleton code
+    &:visited,
+    &:active {
+        color: var(--white);
+    }
+
+
+    &:hover {
+        color: var(--black);
+        background-color: var(--white);
+        opacity: 1;
+        text-decoration: none;
+    }
+
+
+
+
+    &-black {
+        background-color: var(--black);
+
+        &:hover {
+            background-color: var(--primary-400);
+            color: var(--white);
+        }
+    }
+
+    &-white {
+        background-color: var(--white);
+        color: var(--black);
+
+        &:visited,
+        &:active {
+            color: var(--black);
+        }
+
+        &:hover {
+            background-color: var(--primary-50);
+            color: var(--black);
+        }
+    }
+
+    &-sm {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+
+    &-xs {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    &-white-outline {
+        background-color: transparent;
+        border: 2px solid var(--white);
+        color: var(--white);
+
+        &:hover {
+            color: var(--primary-500);
+        }
+
+    }
+
+    &-black-outline{
+        background-color: transparent;
+        border: 2px solid var(--black);
+        color: var(--black);
+
+        &:hover {
+            background-color: var(--black);
+            color: var(--white);
+            border: 2px solid var(--black) !important;
+        }
+    }
+}

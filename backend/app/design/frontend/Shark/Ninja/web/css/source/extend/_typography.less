@@ -1,0 +1,100 @@
+// © 2024 Pragmatic Digital UK.
+
+& when (@media-common = true) {
+    h1, h2, h3 {
+        font-weight: @font-weight__light;
+        line-height: @line_height__base;
+    }
+
+    h4, h5, h6 {
+        font-weight: @font-weight__regular;
+        line-height: 1.5;
+        letter-spacing: @h3__letter-spacing;
+        font-size: @h4__font-size;
+    }
+
+    h1 {
+        font-size: @h1__font-size;
+        letter-spacing: @h1__letter-spacing;
+    }
+
+    h2 {
+        font-size: @h2__font-size;
+        letter-spacing: @h2__letter-spacing;
+    }
+
+    h3 {
+        font-size: @h3__font-size;
+        letter-spacing: @h3__letter-spacing;
+    }
+
+    p, .note {
+        font-size: @paragraph__font-size;
+       // .selection(@color-gray50, @color-white);
+        margin-bottom: @paragraph__margin-bottom;
+        line-height: @line_height__base;
+    }
+
+    ul {
+        font-size: @list__font-size;
+        padding: 0;
+        list-style-position: outside;
+        margin-bottom: @paragraph__margin-bottom;
+        line-height: 1.5;
+
+        li {
+            margin-bottom: 5px;
+            line-height: @line_height__base;
+        }
+	}
+
+    a {
+        transition: all 0.2s ease;
+        &:hover{
+            text-decoration: none;
+        }
+    }
+}
+
+
+//
+//  Desktop                          Tablet +
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
+    h1 {
+        font-size: @h1__font-size;
+        margin-bottom: @heading__margin-bottom__lrg;
+    }
+
+    h2 {
+        font-size: @h2__font-size;
+    }
+
+    h3 {
+        font-size: @h3__font-size;
+    }
+
+    h4, h5, h6 {
+        font-size: @h4__font-size;
+    }
+
+    p {
+        font-size: @paragraph__font-size;
+    }
+
+    ul {
+        font-size: @list__font-size;
+
+        li {
+            margin-bottom: 8px;
+        }
+    }
+
+}
+
+
+.lineheight-21{
+    line-height: 21px;
+}

@@ -1,0 +1,26 @@
+<div class="input-group">
+    <span class="input-group__addon">
+        <button click="decreaseQty" class="input-group__button input-group__button--decrease">
+            <span class="input-group__icon input-group__icon--decrease">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                    <path d="M5 12.0459H19" stroke="black" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </span>
+        </button>
+    </span>
+    <input data-bind="value: qty(), attr: {'data-validate': getDataValidator(), 'title': $t('Qty')}" type="number"
+        name="qty" id="qty" maxlength="12" class="input-group__input" />
+    <span class="input-group__addon">
+        <button click="increaseQty" class="input-group__button input-group__button--increase">
+            <span class="input-group__icon input-group__icon--increase">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                    <path d="M12 5.0459V19.0459" stroke="black" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M5 12.0459H19" stroke="black" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </span>
+        </button>
+    </span>
+</div>

@@ -1,0 +1,187 @@
+.customer-slider {
+    padding: 10px 0 80px 0;
+    position: relative;
+
+    &__img {
+        width: 100%;
+    }
+
+    .slick-track {
+        padding-bottom: 20px;
+    }
+
+    .owl-main-title {
+        margin-top: 32px;
+        margin-bottom: 48px;
+        display: block;
+        font-size: 40px;
+        text-align: center;
+        font-weight: 700;
+
+
+        @media screen and (max-width: 1200px) {
+            font-size: 24px;
+        }
+
+        @media screen and (max-width: 768px) {
+            margin-bottom: 32px;
+            text-align: left;
+        }
+    }
+
+    .owl-title {
+        margin-top: 32px;
+        margin-bottom: 48px;
+        display: block;
+        text-align: left !important;
+        font-size: 24px; 
+
+        @media (min-width: 1200px) {
+            font-size: 40px;
+            margin-bottom: 24px;
+            margin-top: 16px;
+        }
+    }
+
+    .owl-p {
+        font-size: 24px;
+        margin-bottom: 32px;
+        line-height: 36px;
+
+        @media screen and (max-width: 1200px) {
+            margin-bottom: 16px;
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+
+    .owl-p-small {
+        margin-bottom: 0;
+
+        @media screen and (max-width: 1200px) {
+            font-size: 14px;
+        }
+    }
+
+    .btn-black {
+        margin-top: 48px;
+
+        @media screen and (max-width: 768px) {
+            margin-top: 32px;
+        }
+    }
+
+    .five-stars {
+        width: 120px !important;
+        height: 20px;
+    }
+
+
+    .slick-arrow {
+        background-color: transparent !important;
+
+        &::before {
+            display: none;
+        }
+    }
+
+    .slick-dots {
+        margin-top: 55px;
+        text-align: left;
+
+        li button {
+            width: 8px;
+            /* Width of the dots */
+            height: 8px;
+            /* Height of the dots */
+            border-radius: 50%;
+            /* Make them circular */
+            background-color: var(--gray-400);
+            /* Color of the dots */
+            border: none;
+            /* Remove any borders */
+            cursor: pointer;
+            outline: none;
+            /* Remove focus outline */
+        }
+
+        li.slick-active button {
+            background-color: var(--gray-800);
+            /* Color of active dot */
+        }
+
+        @media screen and (max-width: 1200px) {
+            margin-left: 0px;
+            margin-top: 20px;
+        }
+    }
+
+    .slick-next {
+        background-image: url("data:image/svg+xml,%3Csvg width='56' height='56' viewBox='0 0 56 56' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='56' height='56' rx='28' fill='black'/%3E%3Cpath d='M28 20L26.59 21.41L32.17 27H20V29H32.17L26.59 34.59L28 36L36 28L28 20Z' fill='white'/%3E%3C/svg%3E%0A") !important;
+        background-size: contain !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        right: -21px;
+        top: 97%;
+
+        &:hover {
+            background-image: url("data:image/svg+xml,%3Csvg width='56' height='56' viewBox='0 0 56 56' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='56' height='56' rx='28' fill='%234F4F4F'/%3E%3Cpath d='M28 20L26.59 21.41L32.17 27H20V29H32.17L26.59 34.59L28 36L36 28L28 20Z' fill='white'/%3E%3C/svg%3E%0A") !important;
+        }
+
+        @media screen and (max-width: 1200px) {
+            right: 0px;
+        }
+    }
+
+    .slick-prev {
+        top: 97%;
+        left: revert-layer;
+        right: 45px;
+        background-image: url("data:image/svg+xml,%3Csvg width='56' height='56' viewBox='0 0 56 56' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='56' height='56' rx='28' fill='black'/%3E%3Cpath d='M36 27H23.83L29.42 21.41L28 20L20 28L28 36L29.41 34.59L23.83 29H36V27Z' fill='white'/%3E%3C/svg%3E%0A") !important;
+        background-size: contain !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+
+        &:hover {
+            background-image: url("data:image/svg+xml,%3Csvg width='56' height='56' viewBox='0 0 56 56' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='56' height='56' rx='28' fill='%234F4F4F'/%3E%3Cpath d='M36 27H23.83L29.42 21.41L28 20L20 28L28 36L29.41 34.59L23.83 29H36V27Z' fill='white'/%3E%3C/svg%3E%0A") !important;
+        }
+
+        @media screen and (max-width: 1200px) {
+            right: 65px;
+        }
+    }
+
+    .overall-review {
+        overflow: hidden;
+        padding: 10px 60px 10px 60px;
+        box-sizing: border-box;
+
+        @media screen and (max-width: 1440px) {
+            padding: 10px 0px 10px 60px;
+        }
+
+        @media screen and (max-width: 480px) {
+            padding: 48px 0px;
+        }
+    }
+
+    .slick-slide {
+        @media screen and (min-width: 768px) {
+            .container {
+                max-width: 100% !important;
+            }
+
+            .container,
+            .row {
+                margin: 0 !important;
+                padding: 0 !important;
+
+            }
+        }
+
+    }
+}
+
+.rounded-corners-8 {
+    border-radius: 8px;
+}

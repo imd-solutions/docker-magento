@@ -1,0 +1,59 @@
+<?php
+$_menuHtml    = $block->getHtml('level-top', 'submenu', 2);
+
+?>
+<div class="sn-mobile-menu">
+    <div class="sn-mobile-menu__header">
+        <button class="sn-mobile-menu__header__close">Close</button>
+        <button class="sn-mobile-menu__header__back">Back</button>
+        <div class="sn-mobile-menu__header__title">Title Here</div>
+        <button class="sn-mobile-menu__header__search"></button>
+    </div>
+    <div class="sn-mobile-menu__scroll">
+        <div class="sn-mobile-menu__search">
+            <div class="sn-mobile-menu__search__input">
+                <input type="search" placeholder="Search products" name="search-input" />
+            </div>
+            <div class="sn-mobile-menu__search__results">
+                <ul>
+                    <li>
+                        <a href="#">Shark</a>
+                    </li>
+                    <li>
+                        <a href="#">Shark</a>
+                    </li>
+                    <li>
+                        <a href="#">Shark</a>
+                    </li>
+                    <li>
+                        <a href="#">Shark</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="sn-mobile-menu__menu">
+            <ul>
+                <?php echo $_menuHtml; ?>
+            </ul>
+            <div class="sn-mobile-menu__menu__child-menu">
+
+            </div>
+        </div>
+        <div class="sn-mobile-menu__subnav">
+            <ul>
+                <li>
+                    <a href="#">Register my guarantee</a>
+                </li>
+                <li>
+                    <a href="#">Customer care</a>
+                </li>
+                <li>
+                    <a href="#">Sign in</a>
+                </li>
+                <li>
+                    <a href="#">Register</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

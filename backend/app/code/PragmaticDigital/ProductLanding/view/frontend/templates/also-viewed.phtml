@@ -1,0 +1,154 @@
+<section class="our-range">
+
+    <div class="container">
+        <div class="owl-theme title">
+            <h1 class="owl-title"><?= $block->escapeHtml(__('Customers also viewed.')) ?></h1>
+        </div>
+
+        <div id="product-range-carousel-viewed" data-mage-init='{"slick": {
+            "infinite": true,
+            "dots":true,
+            "slidesToShow": 5,
+            "slidesToScroll": 1,
+            "responsive": [
+    {
+        "breakpoint": 0,
+        "settings": {
+            "slidesToShow": 1
+        }
+    },
+    {
+        "breakpoint": 481,
+        "settings": {
+            "slidesToShow": 2
+        }
+    },
+    {
+        "breakpoint": 768,
+        "settings": {
+            "slidesToShow": 3
+        }
+    },
+    {
+        "breakpoint": 992,
+        "settings": {
+            "slidesToShow": 4
+        }
+    },
+    {
+        "breakpoint": 1200,
+        "settings": {
+            "slidesToShow": 5
+        }
+    },
+    {
+        "breakpoint": 1441,
+        "settings": {
+            "slidesToShow": 6
+        }
+    },
+    {
+        "breakpoint": 1681,
+        "settings": {
+            "slidesToShow": 7
+        }
+    }
+]
+
+        }}'>
+
+            <div class="item">
+                <div class="item__inner">
+                    <img src="<?= $block->getViewFileUrl('images/product-range/robot-vacuums.png') ?>" alt="Robot Vacuums" class="img-fluid product-image" />
+                    <div class="title" style="text-align:center;">
+                        <h4><?= $block->escapeHtml(__('Robot Vacuums')) ?></h4>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item__inner">
+                    <img src="<?= $block->getViewFileUrl('images/product-range/hair-care.png') ?>" alt="Hair Care" class="img-fluid product-image" />
+                    <div class="title" style="text-align:center;">
+                        <h4><?= $block->escapeHtml(__('Hair Care')) ?></h4>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item__inner">
+                    <img src="<?= $block->getViewFileUrl('images/product-range/upright-vacuum.png') ?>" alt="Upright Vacuum" class="img-fluid product-image" />
+                    <div class="title" style="text-align:center;">
+                        <h4><?= $block->escapeHtml(__('Upright Vacuums')) ?></h4>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item__inner">
+                    <img src="<?= $block->getViewFileUrl('images/product-range/carpet-cleaner.png') ?>" alt="Carpet Cleaner" class="img-fluid product-image" />
+                    <div class="title" style="text-align:center;">
+                        <h4><?= $block->escapeHtml(__('Carpet Cleaners')) ?></h4>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item__inner">
+                    <img src="<?= $block->getViewFileUrl('images/product-range/fans.png') ?>" alt="Fans" class="img-fluid product-image" />
+                    <div class="title" style="text-align:center;">
+                        <h4><?= $block->escapeHtml(__('Fans')) ?></h4>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item__inner">
+                    <img src="<?= $block->getViewFileUrl('images/product-range/hair-dryer.png') ?>" alt="Hair Dryer" class="img-fluid product-image" />
+                    <div class="title" style="text-align:center;">
+                        <h4><?= $block->escapeHtml(__('Hair Dryers')) ?></h4>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item__inner">
+                    <img src="<?= $block->getViewFileUrl('images/product-range/air-purifer.png') ?>" alt="air purifer" class="img-fluid product-image" />
+                    <div class="title" style="text-align:center;">
+                        <h4><?= $block->escapeHtml(__('Air Purifers')) ?></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script type="text/x-magento-init">
+    {
+    "#owl-range-carousel": {
+        "owlRange": {
+            "autoplay": true,
+            "autoplayhoverpause": true,
+            "loop": true,
+            "nav": true,
+            "responsive": {
+                "0": {
+                    "items": 2
+                },
+                "460": {
+                    "items": 2
+                },
+                "768": {
+                    "items": 3
+                },
+                "990": {
+                    "items": 4
+                },
+                "1200": {
+                    "items": 5
+                },
+                "1440": {
+                    "items": 7
+                }
+            }
+        },
+        "owlCarousel": {
+            "nav": true  
+        }
+    }
+}
+</script>

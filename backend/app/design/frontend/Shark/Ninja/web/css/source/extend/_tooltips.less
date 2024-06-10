@@ -1,0 +1,42 @@
+// © 2024 Pragmatic Digital UK
+
+& when (@media-common = true) {
+
+    .field {
+        .control._with-tooltip {
+            .field-tooltip {
+                top: 12px;
+                right: -40px;
+
+                .field-tooltip-content {
+                    color: @form-field-label__color;
+                    background-color: @light__background-color;
+                    border-color: @color__form-border-base;
+                }
+
+                .field-tooltip-action {
+                    &:before {
+                        .lib-css(font-family, @custom-icon-font);
+                        content: @icon-info;
+                        color: @color__form-border-base;
+                        font-size: 22px!important;
+                        line-height: 1!important;
+                        width: 22px;
+                    }
+                } 
+            }
+        }
+    }
+
+}
+
+
+//
+//                                         Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+    .tooltip.wrapper .tooltip.content {
+        min-width: 16rem;
+    }
+}

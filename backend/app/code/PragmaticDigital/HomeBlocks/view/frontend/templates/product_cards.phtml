@@ -1,0 +1,59 @@
+<section class="product-cards">
+    <div class="container">
+        <div class="slick-in slick-rtl">
+            <div id="card-slick-slider" data-mage-init='{"slick": {
+            "infinite": true,
+            "dots":true,
+            "arrows":false,
+            "center": false,
+            "centerPadding": "15px",
+            "navigation": false,
+            "slidesToShow": 3,
+            "slidesToScroll": 1,
+            "responsive": [
+                
+    {
+        "breakpoint": 768,
+        "settings": {
+           "slidesToShow": 1
+        }
+    }
+                ]
+        }}'>
+                <div class="product-card-slide">
+                    <div class="product-card">
+                        <img src="<?php echo $block->getViewFileUrl('images/cards/card_1.png'); ?>" class="product-card__image" alt="Shark Matrix™">
+                        <img src="<?php echo $block->getViewFileUrl('images/cards/card_5.png'); ?>" class="product-card__image-hover" alt="Shark Matrix 2™">
+                        <div class="product-card__body">
+                            <h3 class="text-bold text-xl">Shark Matrix<span class="text-superscript text-bold text-sm">TM</span></h3>
+                            <p class="text-md">Clean air. Clean hands. Clean home.</p>
+                            <a href="#" class="btn btn-black btn-sm">Shop Robot Vacuums</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card-slide">
+                    <div class="product-card">
+                        <img src="<?php echo $block->getViewFileUrl('images/cards/card_2.png'); ?>" class="product-card__image" alt="Shark SmoothStyle™">
+                        <img src="<?php echo $block->getViewFileUrl('images/cards/card_6.png'); ?>" class="product-card__image-hover" alt="Shark SmoothStyle 2™">
+                        <div class="product-card__body">
+                            <h3 class="text-bold text-xl">Shark SmoothStyle<span class="text-superscript text-bold text-sm">TM</span></h3>
+                            <p class="text-md">Dry, volumize, straighten, and smooth.</p>
+                            <a href="#" class="btn btn-black btn-sm">Shop Hair Care</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card-slide">
+                    <div class="product-card">
+                        <img src="<?php echo $block->getViewFileUrl('images/cards/card_3.png'); ?>" class="product-card__image" alt="Shark FlexBreeze™">
+                        <img src="<?php echo $block->getViewFileUrl('images/cards/card_4.png'); ?>" class="product-card__image-hover" alt="Shark FlexBreeze2">
+                        <div class="product-card__body">
+                            <h3 class="text-bold text-xl">Shark FlexBreeze<span class="text-superscript text-bold text-xs">TM</span></h3>
+                            <p class="text-md">Indoor to outdoor. Cordless to corded.</p>
+                            <a href="#" class="btn btn-black btn-sm">Shop Fans</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

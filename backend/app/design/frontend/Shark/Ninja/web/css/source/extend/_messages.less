@@ -1,0 +1,101 @@
+// © 2024 Pragmatic Digital UK.
+
+//
+//  Messages
+//  ---------------------------------------------
+
+@message__padding: 12px 24px;
+@message__margin: 0 0 30px;
+
+@message__background: @color-gray03;
+@message__font-size: 1.4rem;
+@message__font-weight: 700;
+@message__border-radius: 0;
+@message-icon__inner-padding-left: 80px;
+@message-icon__lateral-width: 42åpx;
+@message__line-height: 1.5;
+
+//
+//  Common
+//  _____________________________________________
+& when (@media-common =true) {
+    body .page-wrapper {
+
+        .message {
+            border-top: solid 2px;
+            border-bottom: solid 2px;
+            border-left: none;
+            border-right: none;
+            background-color: transparent;
+            font-size: 14px;
+            font-family: "Proxima Nova" sans-serif;
+            font-weight: @font-weight__regular;
+            line-height: 19px;
+            padding: 12px 0 12px 52px;
+            margin: 30px 0;
+            position: relative;
+
+            >*:first-child {
+
+                &:before {
+                    content: '';
+                    display: block;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    position: absolute;
+                    top: 50%;
+                    transform: translate(0, -50%);
+                    margin: 0;
+                }
+            }
+
+
+            &.error {
+                border-color: @c-incrdadine;
+                color: @c-incrdadine;
+
+                >*:first-child {
+
+                    &:before {
+                        width: 16px;
+                        height: 16px;
+                        background-image: url('@{baseDir}images/error.svg');
+                        left: 0;
+                    }
+                }
+            }
+
+            &.success {
+                border-color: @c-green;
+                color: @c-green;
+
+                >*:first-child {
+
+                    &:before {
+                        width: 20px;
+                        height: 20px;
+                        background-image: url('@{baseDir}images/success.svg');
+                        left: 0;
+                    }
+                }
+            }
+
+            &.info,
+            &.warning,
+            &.notice {
+                border-color: @c-chestnut;
+                color: @c-chestnut;
+
+                >*:first-child {
+
+                    &:before {
+                        width: 3px;
+                        height: 25px;
+                        background-image: url('@{baseDir}images/notice.svg');
+                        left: 7px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,161 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<?php
+/**
+ * Product list toolbar
+ *
+* @var $block \Magento\Catalog\Block\Product\ProductList\Toolbar
+ */
+?>
+
+<?php if ($block->canShowBlock()) : ?>
+    <div class="filters mobile">
+        <button class="filter-btn filter-button open-filter-menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 14 12" fill="none">
+            <path d="M12.5554 1H1.44434L5.88878 6.25556V9.88889L8.111 11V6.25556L12.5554 1Z" stroke="black" stroke-width="1.11111" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>    
+            Filter
+        </button>
+        <button class="filter-btn open-sort-menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M12.6665 4.66663C12.6665 5.7712 11.7711 6.66663 10.6665 6.66663C9.56193 6.66663 8.6665 5.7712 8.6665 4.66663M12.6665 4.66663C12.6665 3.56206 11.7711 2.66663 10.6665 2.66663C9.56193 2.66663 8.6665 3.56206 8.6665 4.66663M12.6665 4.66663L15.3332 4.66663M8.6665 4.66663H0.666504M7.33317 11.3333C7.33317 12.4379 6.43774 13.3333 5.33317 13.3333C4.2286 13.3333 3.33317 12.4379 3.33317 11.3333M7.33317 11.3333C7.33317 10.2287 6.43774 9.33329 5.33317 9.33329C4.2286 9.33329 3.33317 10.2287 3.33317 11.3333M7.33317 11.3333L15.3332 11.3333M3.33317 11.3333H0.666504" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>    
+            Sort by
+        </button>
+    </div>
+
+    <div class="block filter desktop" >
+        <div class="dropdown">
+            <button class="dropdown-button" onclick="toggleDropdown()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="12" viewBox="0 0 17 12" fill="none">
+                <path d="M13.166 2.5127C13.166 3.61726 12.2706 4.5127 11.166 4.5127C10.0614 4.5127 9.16602 3.61726 9.16602 2.5127M13.166 2.5127C13.166 1.40813 12.2706 0.512695 11.166 0.512695C10.0614 0.512695 9.16602 1.40813 9.16602 2.5127M13.166 2.5127L15.8327 2.5127M9.16602 2.5127H1.16602M7.83268 9.17936C7.83268 10.2839 6.93725 11.1794 5.83268 11.1794C4.72811 11.1794 3.83268 10.2839 3.83268 9.17936M7.83268 9.17936C7.83268 8.07479 6.93725 7.17936 5.83268 7.17936C4.72811 7.17936 3.83268 8.07479 3.83268 9.17936M7.83268 9.17936L15.8327 9.17936M3.83268 9.17936H1.16602" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+                Sort by
+            </button>
+            <div id="dropdown-content" class="dropdown-content">
+                <div class="dropdown-option" onclick="selectOption('Price (Ascending)')">Price (Ascending)</div>
+                <div class="dropdown-option" onclick="selectOption('Price (Descending)')">Price (Descending)</div>
+            </div>
+        </div>
+        
+        <div class="block-content filter-content">
+            <?= $block->getChildHtml('state') ?>
+            <?php if ($block->getLayer()->getState()->getFilters()) : ?>
+                <div class="block-actions filter-actions">
+                    <a href="<?= $block->escapeUrl($block->getClearUrl()) ?>" class="action clear filter-clear"><span><?= $block->escapeHtml(__('Clear All')) ?></span></a>
+                </div>
+            <?php endif; ?>
+            <?php $wrapOptions = false; ?>
+            <?php foreach ($block->getFilters() as $filter) : ?>
+                <?php if (!$wrapOptions) : ?>
+                    <dl class="filter-options" id="narrow-by-list">
+                    <?php $wrapOptions = true;
+                endif; ?>
+                    <!-- <?php if ($filter->getItemsCount()) : ?>
+                        <dt role="heading" aria-level="3" class="filter-options-title"><?= $block->escapeHtml(__($filter->getName())) ?></dt>
+                        <dd class="filter-options-content"><?= /* @noEscape */ $block->getChildBlock('renderer')->render($filter) ?></dd>
+                    <?php endif; ?> -->
+                <?php endforeach; ?>
+                <?php if ($wrapOptions) : ?>
+                    <dt role="heading" aria-level="3" class="filter-options-title">Category</dt>
+                    <dd class="filter-options-content"><ol id="list">
+            <li class="item">
+            <div class="item-content">
+                <input type="checkbox" id="filterCheckbox" class="filter-checkbox">
+                <label for="filterCheckbox">
+                    <a href="http://shark.local/index.php/vacuum-cleaners.html?cat=8" rel="nofollow">Pet Safe</a>
+                </label>
+                                    <span class="count">8</span>
+                            </div>
+                    </li>
+    </ol></dd>
+                    <dt role="heading" aria-level="3" class="filter-options-title">Hair Type</dt>
+                    <dd class="filter-options-content">Placeholder for Hair Type</dd>
+                    <dt role="heading" aria-level="3" class="filter-options-title">Collection</dt>
+                    <dd class="filter-options-content">Placeholder for Collection</dd>
+                    <dt role="heading" aria-level="3" class="filter-options-title">Price</dt>
+                    <dd class="filter-options-content">Placeholder for Price</dd>
+                </dl>
+            <?php endif; ?>
+            <div class="applied-filters" style="padding: 10px; white-space: nowrap;">
+                <h4>Applied Filters:</h4>
+                <button class="btn-applied">
+                Hair Dryers
+                <svg class="btn-applied__icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                    <path d="M3.17188 8.51709L8.82873 2.86024" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M8.82861 8.51709L3.17176 2.86024" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                </button>
+            </div>
+        </div>
+        </div>
+    </div>
+<?php endif; ?>
+
+<script>
+// "sort by" stuff:
+function toggleDropdown() {
+    console.log("this has been clicked");
+    var dropdown = document.getElementById('dropdown-content');
+    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    
+    var button = document.querySelector('.dropdown-button');
+    button.classList.toggle('active');
+}
+
+
+function selectOption(option) {
+    var dropdown = document.getElementById('dropdown-content');
+    var button = document.querySelector('.dropdown-button');
+    dropdown.classList.remove('show');
+    button.classList.remove('active');
+}
+
+window.onclick = function(event) {
+    if (!event.target.matches('.dropdown-button')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        for (var i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+        var buttons = document.getElementsByClassName("dropdown-button");
+        for (var i = 0; i < buttons.length; i++) {
+            var activeButton = buttons[i];
+            if (activeButton.classList.contains('active')) {
+                activeButton.classList.remove('active');
+            }
+        }
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Get all filter option titles
+    var filterOptionTitles = document.querySelectorAll(".filter-options-title");
+
+    // Add click event listener to each filter option title
+    filterOptionTitles.forEach(function(title, index) {
+        title.addEventListener("click", function() {
+            // Remove border-bottom from current filter option title
+            title.style.borderBottom = "none";
+
+            // Find the next sibling filter option title
+            var nextTitle = filterOptionTitles[index + 1];
+
+            // Check if the next sibling exists
+            if (nextTitle) {
+                // Add border-top to the next filter option title
+                nextTitle.style.borderTop = "1px solid #98A2B3";
+            }
+        });
+    });
+});
+
+
+
+</script>

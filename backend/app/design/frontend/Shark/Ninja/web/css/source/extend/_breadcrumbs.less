@@ -1,0 +1,71 @@
+// © 2024 Pragmatic Digital UK.
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common =true) {
+    .breadcrumbs {
+        display: none;
+        margin: 25px 0 40px;
+        opacity: 0.6;
+
+        a,
+        strong {
+            font-size: 12px;
+            font-family: @font-family__main;
+            color: @c-grey;
+        }
+
+        li.item:after {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 4px;
+            border: 1px solid @c-grey;
+            border-radius: 50%;
+            position: relative;
+            vertical-align: middle !important;
+            margin: 0 4px;
+        }
+
+        li.item:last-child:after {
+            display: none;
+        }
+
+        strong {
+            font-size: 13px;
+        }
+    }
+
+    .catalog-product-view,
+    .catalog-category-view,
+    .catalogsearch-result-index {
+        .breadcrumbs {
+            display: block;
+        }
+    }
+
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {
+    .breadcrumbs {
+        display: none;
+    }
+
+    .catalog-category-view {
+        header.page-header {
+            +.breadcrumbs {
+                margin-top: 107px;
+
+                +#maincontent {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,104 @@
+.two-product-cards {
+    padding: 16px 0;
+
+    @media screen and (max-width:768px) {
+        padding: 0 0 16px 0;
+    }
+}
+
+.two-product-card {
+    min-height: 500px;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--primary-50);
+    display: flex;
+    align-items: flex-end;
+    align-content: center;
+
+    @media screen and (min-width: 1200px) {
+        min-height: 650px;
+    }
+
+    @media screen and (max-width: 1200px) {
+        min-height: 370px;
+        margin-bottom: 24px;
+    }
+
+    @media screen and (max-width: 768px) {
+        min-height: 358px;
+    }
+
+
+
+    &__image {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        z-index: 3;
+        border-radius: 8px;
+        transition: all 0.3s ease-in-out;
+
+        &:after {
+            content: '';
+            display: block;
+            z-index: 4;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+            opacity: 0.6;
+            transition: all 0.3s ease-in-out;
+        }
+    }
+
+    &:hover {
+        .two-product-card__image {
+            &:after {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__body {
+        position: relative;
+        z-index: 5;
+        padding: 36px 24px;
+        width: 100%;
+
+        @media screen and (max-width: 1200px) {
+            padding: 24px;
+        }
+    }
+
+    &__button {
+        position: absolute;
+        right: 24px;
+        top: 53px;
+
+        @media screen and (max-width: 1200px) {
+            position: relative;
+            top: 0;
+            right: 0;
+        }
+    }
+
+    &__title {
+        margin-bottom: 5px;
+        font-size: 24px;
+
+
+        @media screen and (max-width: 1200px) {
+            font-size: 20px;
+        }
+    }
+
+
+}

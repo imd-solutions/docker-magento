@@ -1,0 +1,24 @@
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$customerSession = $objectManager->create('Magento\Customer\Model\Session');
+
+?>
+<li class="link my-account-link">
+    <?php if ($customerSession ->isLoggedIn()): ?>
+
+        <a <?= $block->getLinkAttributes() ?> href="<?= $block->escapeUrl($block->getAccountUrl()) ?>">
+            <img src="<?= $block->getViewFileUrl('images/icons/user-icon.png') ?>" alt="My Account" />
+        </a>
+        <ul class="account-options-dropdown">
+    
+            <li><a href="<?= $block->getUrl('customer/account') ?>">Account Dashboard</a></li>
+            <li><a href="<?= $block->getUrl('sales/order/history') ?>">My Orders</a></li>
+            <li><a href="<?= $block->getUrl('customer/account/logout') ?>">Logout</a></li>
+        </ul>
+    <?php else: ?>
+        <!-- If not signed in, just show the icon with a link to the login page -->
+        <a href="<?= $block->escapeUrl($block->getLoginUrl()) ?>">
+            <img src="<?= $block->getViewFileUrl('images/icons/user-icon.png') ?>" alt="Sign In" />
+        </a>
+    <?php endif; ?>
+</li>

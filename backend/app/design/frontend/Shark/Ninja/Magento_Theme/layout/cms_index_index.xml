@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="page.main.title" remove="true" />
+        <referenceContainer name="content">
+            <block class="Magento\Framework\View\Element\Template" name="pragmatic.homepage.hero" template="PragmaticDigital_HomeBlocks::hero_block.phtml"/>
+            <block class="Magento\Framework\View\Element\Template" name="pragmatic.homepage.cards" template="PragmaticDigital_HomeBlocks::product_cards.phtml"/>
+            <block class="Magento\Framework\View\Element\Template" name="pragmatic.homepage.offers" template="PragmaticDigital_HomeBlocks::offers.phtml"/>
+            <block class="Magento\Framework\View\Element\Template" name="pragmatic.homepage.upsells" template="PragmaticDigital_HomeBlocks::upsell_cards.phtml"/>
+            <block class="Magento\Framework\View\Element\Template" name="pragmatic.homepage.two-cards" template="PragmaticDigital_HomeBlocks::two_card_products.phtml"/>
+            <block class="Magento\Framework\View\Element\Template" name="pragmatic.homepage.carousel.range" template="PragmaticDigital_HomeBlocks::carousel-our-range.phtml"/>
+            <block class="Magento\Framework\View\Element\Template" name="pragmatic.homepage.carousel.products" template="PragmaticDigital_HomeBlocks::products-slider.phtml"/>
+            <block class="Magento\Framework\View\Element\Template" name="pragmatic.homepage.slider.customer.review" template="PragmaticDigital_HomeBlocks::customer-slider.phtml"/>
+        </referenceContainer>
+        <referenceBlock name="cms_page" remove="true"/>
+    </body>
+</page>

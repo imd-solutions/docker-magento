@@ -1,0 +1,55 @@
+<div class="product-support-tab-button products-tabs__button">
+    <div class="container">
+        <a href="#product-support-tab">Product Support</a>
+    </div>
+</div>
+
+<div class="background-gray-200 product-support-tab products-tabs__pannel">
+    <div class="container product-tab-support">
+        <h2><?= $block->escapeHtml(__('User Guides')) ?></h2>
+        <div class="row top-row">
+            <div class="col-md-4">
+
+                <div class="card">
+                    <div class="card-body">
+                        <img src="<?= $block->getViewFileUrl('images/icons/booklet-icon.png') ?>" alt="booklet icon" style="max-width: 40px; margin-bottom:32px;">
+                        <div>
+                            <h5 class="card-title"><?= $block->escapeHtml(__('IW1511UK Instruction Booklet')) ?></h5>
+                            <a href="<?= $block->getUrl('path/to/guide') ?>" class="btn btn-black">
+                                <img src="<?= $block->getViewFileUrl('images/icons/download-icon.png') ?>" alt="download icon" style="max-width: 24px;"><?= $block->escapeHtml(__('Download Guide')) ?>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Shipping & Returns Section -->
+        <div class="row">
+            <div class="col-12">
+                <h2><?= $block->escapeHtml(__('Shipping & Returns')) ?></h2>
+                <div class="row margin-40">
+                    <?php $locations = [
+                        ['Canada', '31 CAD', 'Canada has a shipping surcharge of 31 CAD.'],
+                        ['Hawaii & Alaska', '100 USD', 'Shipments to Hawaii & Alaska have a surcharge of 100 USD.'],
+                        ['Puerto Rico & Guam', '175 USD', 'Shipments to Puerto Rico & Guam are subject to a 175 USD surcharge.']
+                    ]; ?>
+                    <?php foreach ($locations as $location) : ?>
+                        <div class="col-md-4 mb-3">
+                            <div class="card shipping">
+                                <div class="card-body">
+                                    <img src="<?= $block->getViewFileUrl('images/icons/package-icon.png') ?>" alt="package icon" style="max-width: 50px; margin-bottom:32px;">
+                                    <h5 class="card-title"><?= $location[0] ?></h5>
+                                    <p class="card-text"><?= $location[2] ?></p>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+                <p><?= $block->escapeHtml(__('Free shipping on all orders of $99 or more. Orders less than $99 may be subject to a $10 shipping fee.')) ?></p>
+                <p><?= $block->escapeHtml(__('SharkNinja offers a 60-day money back guarantee or a 90-day money back guarantee on select products. The applicable guarantee will be stated with your order.')) ?></p>
+            </div>
+        </div>
+    </div>
+
+</div>

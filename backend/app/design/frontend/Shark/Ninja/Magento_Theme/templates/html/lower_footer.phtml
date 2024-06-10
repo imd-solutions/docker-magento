@@ -1,0 +1,48 @@
+<section class="lower-footer-container">
+    <div class="container p-0">
+        <div class="lower-footer">
+            <div class="lower-footer__content">
+                <!-- <p class="text-xs text-white text-light"><?php //$block->escapeHtml($block->getCopyright()) 
+                                                                ?></p> -->
+                <p class="text-xs text-white text-light">© Shark | Innovative Vacuum Cleaners, Mops & Home Care Products 2024. Shark® is a registered trademark of SharkNinja Operating LLC.</p>
+
+                <p class="text-xs text-white text-light"><?= $block->escapeHtml(__('Finance provided by PayPal Credit. Terms and conditions apply. Credit subject to status, UK residents only, SharkNinja Europe Ltd. (postal address: 3150 Century Way, Leeds, LS15 8ZB) acts as a broker and offers finance from PayPal Credit, PayPal Credit is a trading name of PayPal UK Ltd, Whittaker House, Whittaker Avenue, Richmond-Upon-Thames, Surrey, United Kingdom, TW9 1EH.')) ?></p>
+            </div>
+
+
+            <div class="lower-footer__social">
+                <a href="<?= $block->getUrl('#') ?>" class="lower-footer__social--facebook"></a>
+                <a href="<?= $block->getUrl('#') ?>" class="lower-footer__social--instagram"></a>
+                <a href="<?= $block->getUrl('#') ?>" class="lower-footer__social--youtube"></a>
+                <a href="<?= $block->getUrl('#') ?>" class="lower-footer__social--pinterest"></a>
+                <a href="<?= $block->getUrl('#') ?>" class="lower-footer__social--tiktok"></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    window.markerConfig = {
+        project: '66323abdfe37d74f9d41bcbe',
+        source: 'snippet'
+    };
+    ! function(e, r, a) {
+        if (!e.__Marker) {
+            e.__Marker = {};
+            var t = [],
+                n = {
+                    __cs: t
+                };
+            ["show", "hide", "isVisible", "capture", "cancelCapture", "unload", "reload", "isExtensionInstalled", "setReporter", "setCustomData", "on", "off"].forEach(function(e) {
+                n[e] = function() {
+                    var r = Array.prototype.slice.call(arguments);
+                    r.unshift(e), t.push(r)
+                }
+            }), e.Marker = n;
+            var s = r.createElement("script");
+            s.async = 1, s.src = "https://edge.marker.io/latest/shim.js";
+            var i = r.getElementsByTagName("script")[0];
+            i.parentNode.insertBefore(s, i)
+        }
+    }(window, document);
+</script>

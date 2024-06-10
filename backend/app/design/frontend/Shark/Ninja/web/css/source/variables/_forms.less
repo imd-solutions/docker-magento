@@ -1,0 +1,96 @@
+// © 2024 Pragmatic Digital UK.
+//
+//  Definition Variables
+//  _____________________________________________
+
+@color__form-border: @color__form-border-base;
+@color__form-focus_border: darken(@color__form-border, 12%);
+@color__form-text-color: @c-input-border;
+@color__form-field-label-color: @color__form-text-color;
+
+@color__form__note: @color-info;
+@color__form__error: @color-error;
+@color__form__valid: @color-success;
+@color__form__notice: @color-info;
+
+@color__form__placeholder: @form-element-input-placeholder__color;
+@color__form__search_border: @color__form-border;
+@error__color: @color__form__error;
+@border-width__base: 1px;
+
+//
+//  Forms
+//  _____________________________________________
+
+@form-field__vertical-indent: 16px;
+@form-field__vertical-indent__desktop: 32px;
+
+@form-field-column: false;
+@form-field-column__number: 2;
+@form-field-column__padding: 0 12px 0 0;
+
+//  Fieldset
+//  _____________________________________________
+@form-fieldset__margin: 0 0 20px;
+@fieldset-block-title-font-size: @block-title-font-size;
+
+//  Inputs
+//  ---------------------------------------------
+@form-element-input__background: @page__background-color;
+@form-element-input__border-color: @color__form-border;
+@form-element-input__border: @border-width__base solid @form-element-input__border-color;
+@form-element-input__border-radius: 0px;
+@form-element-input__height: 24px;
+@form-element-input__font-size: @font-size__m;
+@form-element-input__font-family: "Proxima Nova" sans-serif;
+@form-element-input__line-height: 24px;
+@form-element-input__color: @color__form-text-color;
+@form-element-input__focus__border: @border-width__base solid @color__form-focus_border;
+@form-element-input__focus__color: @color__form-text-color;
+@form-element-input-type: ''; // [input-text|select|textarea|input-radio|input-checkbox]
+@form-element-input__border-color: @color-gray76;
+@form-element-input__border: 1px solid @form-element-input__border-color;
+@form-element-input__padding: 0 0 6px 0;
+//@form-element-input__background-clip: padding-box; // [border-box|content-box|padding-box]
+@form-element-input__background-clip: border-box;
+
+//  Placeholder
+@form-element-input-placeholder__color: @color-gray76;
+@form-element-input-placeholder__font-style: @form-element-input__font-style;
+
+//  Elements
+//  ---------------------------------------------
+@select__padding: 0 35px 0 0;
+@form-element-select__border-color: @form-element-input__border-color;
+@form-element-textarea__border-color: @form-element-input__border-color;
+@form-element-checkbox__border-color: @form-element-input__border-color;
+
+//  Labels
+//  _____________________________________________
+@form-field-type-label-inline__padding-top: 0;
+@form-field-type-label-inline__padding-right: 15px;
+@form-field-type-label-inline__padding: @form-field-type-label-inline__padding-top @form-field-type-label-inline__padding-right 0 0;
+@form-field-type-label-inline__width: 25.8%;
+@form-field-type-control-inline__width: 74.2%;
+@form-field-type-label-inline__align: left;
+@form-field-type-label-block__margin: 0 0 10px;
+@form-field-label__font-family: "Proxima Nova" sans-serif;
+@form-field-label__color: @color__form-field-label-color;
+@form-field-label__font-size: @font-size__l;
+@form-field-label__font-weight: normal;
+@form-field-label__line-height: 1.5;
+@form-field-label__letter-spacing: 0.025rem;
+@form-field-label__text-transform: none;
+
+//  Form field label asterisk
+//  _____________________________________________
+@form-field-label-asterisk__color: @color__form-field-label-color;
+@form-field-label-asterisk__margin: 0 0 0 9px;
+@form-field-label-asterisk__font-size: @font-size__s;
+
+//  Form field note
+//  _____________________________________________
+@form-field-note__font-size: @font-size__m;
+@form-field-note__font-family: "Proxima Nova" sans-serif;
+@form-field-note__margin: 3px 0 0;
+@form-field-note__padding: 0;

@@ -1,0 +1,94 @@
+
+
+
+    <div class="container-delivery-info-page">
+        <div class="row"> 
+                <div class="delivery-info-heading">
+                    <h1 class="title"><?= $block->escapeHtml(__('Delivery & Returns')) ?></h1>
+                    <h6 class="subtitle" ><?= $block->escapeHtml(__('Need to contact us? ')) ?> <a href="<?= $block->getUrl('contact') ?>"><?= $block->escapeHtml(__('Click Here')) ?></a><?= $block->escapeHtml(__(' to see support information.')) ?></h6>
+                </div>
+                <!-- Side panel for 'card-difficulty', occupying 30% of the width on the right -->
+                <div class="col-md-4">
+                <div class="accordian-black" id="accordian" data-mage-init='{"accordion":{ "active": [0], "collapsible": true, "openedState": "active", "multipleCollapsible": false }}'>
+                        <div class="panel-default-black" data-role="collapsible">
+                            <div class="panel-heading" data-role="trigger">
+                                <h4 class="panel-title"><?= $block->escapeHtml(__('Delivery Information')) ?></h4>
+                                <button class="shark-right-white"></button>
+                            </div>
+                        </div>
+                        <div class="panel-white" data-role="collapsible">
+                            <div class="panel-heading" data-role="trigger">
+                                <h4 class="panel-title"><?= $block->escapeHtml(__('Delivery Policy')) ?></h4>
+                                <button class="shark-right-black"></button>
+                            </div>
+                        </div>
+                        <div class="panel-white" data-role="collapsible">
+                            <div class="panel-heading" data-role="trigger">
+                                <h4 class="panel-title"><?= $block->escapeHtml(__('Returns Policy')) ?></h4>
+                                <button class="shark-right-black"></button>
+                            </div>
+                        </div>                      
+                    </div>
+            <div class="card-difficulty">
+                <div class="card-title">
+                    <img src="<?= $block->getViewFileUrl('images/icons/question-icon.png') ?>" alt="package icon" class="img-fluid mb-2" style="max-width: 50px;">
+                    <h6><?= $block->escapeHtml(__('Having difficulties?')) ?></h6>
+                </div>
+                    <p class="card-body"><?= $block->escapeHtml(__('If you have any problems or need help, please contact our Customer Service.')) ?></p>
+                    <button class="btn-primary" href="<?= $block->getUrl('contact') ?>"><?= $block->escapeHtml(__('Go to support centre')) ?></button>
+                </div>
+            </div>
+        <div class="col-md-8">
+                <div class="delivery-info-content">
+                    <h6 style="font-weight:bold;"><?= $block->escapeHtml(__('Free Next Day Delivery 7 days a week.*')) ?></h6>
+                    <p><?= $block->escapeHtml(__('We know life is busy, so our delivery service is designed to fit around you. Get Free Next Day Delivery every day, including weekends – plus, flexible options to make receiving your order easy and convenient.')) ?></p>
+                    <ul>
+                        <li><?= $block->escapeHtml(__('You’ll get a 1-hour delivery time slot, so you won’t have to wait around')) ?></li>
+                        <li><?= $block->escapeHtml(__('We’ll keep you updated – just enter a phone number or email address at checkout to receive order updates and tracking.')) ?></li>
+                        <li><?= $block->escapeHtml(__('Order before 8pm (including weekends) to qualify for Free Next Day Delivery')) ?></li>
+                    </ul>
+                    <p><?= $block->escapeHtml(__('* on Main Units. Parts & Accessories are delivered by Royal Mail 2nd Class. Excludes Bank Holidays.')) ?></p>
+                    <p><?= $block->escapeHtml(__('Main unit orders are delivered by DPD or Yodel and the carrier will be confirmed once your order is dispatched.')) ?></p>
+                    <p><?= $block->escapeHtml(__('To assist with tracking your order, we recommend downloading the relevant courier app. This service is available once your order has been dispatched and courier confirmed.')) ?></p>
+                    <p><?= $block->escapeHtml(__('To download the DPD App - click ')) ?><a href="<?= $block->getUrl('') ?>"><?= $block->escapeHtml(__('HERE')) ?></a><?= $block->escapeHtml(__(' to find out more.')) ?></p>
+                    <p><?= $block->escapeHtml(__('To download the Yodel App - click ')) ?><a href="<?= $block->getUrl('') ?>"><?= $block->escapeHtml(__('HERE')) ?></a><?= $block->escapeHtml(__(' to find out more.')) ?></p>
+                </div>
+                <div class="delivery-info-accordian">
+                    <div id="accordian" data-mage-init='{"accordion":{ "active": false, "collapsible": true, "openedState": "active", "multipleCollapsible": true }}'>
+
+                        <div class="panel" data-role="collapsible">
+                            <div class="panel-heading" data-role="trigger">
+                                <h4 class="panel-title"><?= $block->escapeHtml(__('Delivery Locations')) ?></h4>
+                                <button class="shark-down toggle-shark"></button>
+                            </div>
+                            <div data-role="content" class="panel-collapse collapse in">
+                            <div class="panel-body">    
+                            <p>To clean your Shark vacuum, follow these steps: [Cleaning Steps].</p>
+                            </div>
+                            </div>
+                        </div>                   
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var toggleButtons = document.querySelectorAll('.toggle-shark');
+    toggleButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            if (this.classList.contains('shark-up')) {
+                this.classList.remove('shark-up');
+                this.classList.add('shark-down');
+            } else {
+                this.classList.remove('shark-down');
+                this.classList.add('shark-up');
+            }
+        });
+    });
+});
+</script>

@@ -1,0 +1,99 @@
+<div class="faqs-tab-button products-tabs__button">
+    <div class="container">
+        <a href="#faqs-tab">FAQs</a>
+    </div>
+</div>
+<div class="background-gray-200 faqs-tab products-tabs__pannel">
+    <?php
+
+
+    $accordionSections = [
+        ['title' => ' What are the benefits of the LED display?', 'content' => 'To clean your Shark vacuum, follow these steps: [Cleaning Steps].'],
+        ['title' => 'What does the LED light indicator show?', 'content' => 'To clean your Shark vacuum, follow these steps: [Cleaning Steps].'],
+        ['title' => 'What are the benefits of a QuadClean floor nozzle?', 'content' => 'To clean your Shark vacuum, follow these steps: [Cleaning Steps].'],
+        ['title' => 'What is Detect Technology?', 'content' => 'To clean your Shark vacuum, follow these steps: [Cleaning Steps].'],
+        ['title' => 'What are the benefits of Anti Hair Wrap Plus?', 'content' => 'To clean your Shark vacuum, follow these steps: [Cleaning Steps].'],
+        ['title' => 'Which power mode should I use?', 'content' => 'To clean your Shark vacuum, follow these steps: [Cleaning Steps].']
+    ];
+
+    ?>
+
+    <div class="container product-faq">
+        <h2><?= $block->escapeHtml(__('FAQs & Product Support')) ?></h2>
+        <div class="row">
+            <div class="col-md-6">
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+                <a class="btn btn-black" href="<?= $block->getUrl('contact') ?>"><?= $block->escapeHtml(__('Go to support centre')) ?></a>
+            </div>
+            <div class="col-md-6">
+                <div id="accordion" data-mage-init='{
+                "accordion":{
+                    "active": [0],
+                    "collapsible": true,
+                    "openedState": "active",
+                    "multipleCollapsible": true
+                }}'>
+                    <div data-role="collapsible" class="panel panel-default faq-accordion">
+                        <div data-role="trigger" class="panel-heading">
+                            <h4 class="panel-title" style="font-weight: bold;"><?= $block->escapeHtml(__('What guarantee do I get with my Shark vacuum?')) ?></h4>
+
+
+                            <button class="shark-up toggle-shark">
+
+                            </button>
+                        </div>
+                        <div data-role="content" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                <p><?= $block->escapeHtml(__('When you register your guarantee with Shark, you are covered for 5 years (excludes batteries). You can register your guarantee here:')) ?></p>
+                                <div class="card-body">
+                                    <img src="<?= $block->getViewFileUrl('images/icons/question-icon.png') ?>" alt="package icon" class="img-fluid mb-2" style="max-width: 50px;">
+                                    <h5 class="card-title"><?= $block->escapeHtml(__('Register')) ?></h5>
+                                    <p class="card-text"><?= $block->escapeHtml(__('To register your guarantee, please ')) ?><a href="<?= $block->getUrl('customer/account/create/') ?>"><?= $block->escapeHtml(__('click here')) ?> </a><?= $block->escapeHtml(__(' to complete the form.')) ?></p>
+                                </div>
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <?php foreach ($accordionSections as $section) : ?>
+                        <div data-role="collapsible" class="panel panel-default faq-accordion">
+                            <div data-role="trigger" class="panel-heading">
+                                <h4 class="panel-title" style="font-weight: bold;"><?= $this->escapeHtml($section['title']) ?></h4>
+
+                                <button class="shark-down toggle-shark">
+
+                                </button>
+                            </div>
+                            <div data-role="content" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                    <p> <?= $this->escapeHtml($section['content']) ?> </p>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var toggleButtons = document.querySelectorAll('.toggle-shark');
+            toggleButtons.forEach(function(button) {
+                button.addEventListener('click', function() {
+                    // Toggle the classes directly on the button
+                    if (this.classList.contains('shark-up')) {
+                        this.classList.remove('shark-up');
+                        this.classList.add('shark-down');
+                    } else {
+                        this.classList.remove('shark-down');
+                        this.classList.add('shark-up');
+                    }
+                });
+            });
+        });
+    </script>
+</div>

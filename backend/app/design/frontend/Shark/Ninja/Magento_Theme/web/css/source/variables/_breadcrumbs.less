@@ -1,0 +1,63 @@
+// © 2024 Pragmatic Digital UK. 
+
+//
+//  Breadcrumbs
+//  ---------------------------------------------
+@breadcrumbs__container-margin: 0 0 35px;
+@breadcrumbs-link__visited__color: @color-gray50;
+@breadcrumbs-link__color: @color-gray50;
+@breadcrumbs-current__color: @color-gray10;
+@breadcrumbs-link__hover__color: @color-gray10;
+
+//
+//  Breadcrumbs separator icon
+//  ---------------------------------------------
+@breadcrumbs-icon__font-content: '/';
+@breadcrumbs-icon__font-size: 12px;
+@breadcrumbs-icon__font-line-height: 1.4rem;
+@breadcrumbs-icon__font-color: @color-gray01;
+@breadcrumbs-icon__font-margin: 0 3px 0;
+
+//  Breadcrumbs
+//  ---------------------------------------------
+& when (@media-common =true) {
+    .breadcrumbs {
+        margin-bottom: 16px;
+
+        .item {
+            color: var(--gray-500, #667085);
+            leading-trim: both;
+            text-edge: cap;
+            font-family: "Proxima-Nova", sans-serif;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%;
+            /* 24px */
+
+            a {
+                font-family: "Proxima-Nova", sans-serif;
+                text-decoration: underline;
+                text-decoration-line: underline;
+            }
+
+            strong {
+                font-weight: @font-weight__bold;
+            }
+        }
+
+        .item:after {
+            vertical-align: middle !important;
+            margin: 0 4px;
+        }
+    }
+}
+
+
+.breadcrumbs {
+    box-sizing: content-box !important;
+}
+
+.breadcrumbs .item:not(:last-child):after {
+    font-size: 14px !important;
+}

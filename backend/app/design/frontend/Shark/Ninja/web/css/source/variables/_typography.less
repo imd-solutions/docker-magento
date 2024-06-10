@@ -1,0 +1,220 @@
+// © 2024 Pragmatic Digital UK.
+
+// @font-size__base = 1.4rem = 14px;
+
+// // .lib-typography() {
+// @_font-size: @font-size__base,
+// @_color: @text__color,
+// @_font-family: @font-family__base,
+// @_font-weight: @font-weight__regular,
+// @_line-height: @line-height__base,
+// @_font-style: @font-style__base
+
+// // Indents
+// @indent__base: @line-height__computed; // 20px
+// @indent__xl: @indent__base * 2; // 40px
+// @indent__l: @indent__base * 1.5; // 30px
+// @indent__m: @indent__base * 1.25; // 25px
+// @indent__s: @indent__base / 2; // 10px
+// @indent__xs: @indent__base / 4; // 5px
+
+//  Weights
+@font-weight__light: 300;
+@font-weight__regular: 400;
+@font-weight__heavier: 500;
+@font-weight__semibold: 600;
+@font-weight__bold: 700;
+
+
+//
+//  Font Family
+//  ---------------------------------------------
+
+
+
+
+@font-family__main: 'Proxima-Nova';
+
+@font-family-name__base: @font-family__main;
+
+@font-family__heading: @font-family-name__base;
+
+
+
+.lib-font-face(@family-name: @font-family-name__base,
+    @font-path: '@{baseDir}fonts/proxima/Proxima-Nova-Thin',
+    @font-weight: 300,
+    @font-style: normal,
+    @font-display: swap);
+.lib-font-face(@family-name: @font-family-name__base,
+    @font-path: '@{baseDir}fonts/proxima/Proxima-Nova-Regular',
+    @font-weight: 400,
+    @font-style: normal,
+    @font-display: swap);
+.lib-font-face(@family-name: @font-family-name__base,
+    @font-path: '@{baseDir}fonts/proxima/Proxima-Nova-SemiBold',
+    @font-weight: 600,
+    @font-style: normal,
+    @font-display: swap);
+.lib-font-face(@family-name: @font-family-name__base,
+    @font-path: '@{baseDir}fonts/proxima/Proxima-Nova-Bold',
+    @font-weight: 700,
+    @font-style: normal,
+    @font-display: swap);
+
+
+
+//
+//  Font sizes
+//  ---------------------------------------------
+
+@root__font-size: 14px; // Defines ratio between root font size and base font size, 1rem = 10px
+@font-size-ratio__base: 1.4; // Defines ratio of the root font-size to the base font-size
+
+@font-size-unit: px; // The unit to which most typography values will be converted by default
+@font-size-unit-ratio: unit((@root__font-size * 16/100)); // Ratio of the root font-size to the font-size unit
+@font-size-unit-convert: false; // Controls whether font-size values are converted to the specified font-size unit
+@font-size__base: @font-size__s;
+
+@font-size__xxxxl: 48px;
+@font-size__xxxl: 40px;
+@font-size__xxl: 32px;
+@font-size__xl: 24px;
+@font-size__l: 18px;
+@font-size__m: 16px;
+@font-size__s: 14px;
+@font-size__xs: 14px;
+@font-size__xxs: 12px;
+@font-size__xxxs: 12px;
+@font-size__xxxxs: 12px;
+
+
+
+//
+//  Paragraphs
+//  ---------------------------------------------
+
+@heading__margin-bottom__base: 15px;
+@heading__margin-bottom__lrg: 20px;
+
+@paragraph__margin-top: false;
+@paragraph__margin-bottom: 14px;
+@paragraph__font-size: @font-size__m;
+@paragraph__font-size-desktop: @font-size__m;
+@paragraph__font-size-mobile: @font-size__m;
+
+@list__font-size: @font-size__m;
+@list__font-size-desktop: @font-size__m;
+
+@link__text-decoration: none;
+@line_height__base: 1.125;
+
+//
+//  Headings
+//  ---------------------------------------------
+
+@page-title__font-size: @h1__font-size;
+@block-title-font-size: @font-size__l;
+
+@heading__line-height__base: 1.25;
+@heading__font-weight__base: 400;
+@heading__font-family__base: @font-family__heading;
+@heading__margin-top__base: 0;
+@heading__small-line-height: 1;
+
+@h1__font-size: @font-size__xxxl;
+@h1__font-size-desktop: @font-size__xxl;
+@h1__font-size-mobile: @font-size__xxl;
+@h1__banner-font-size: @font-size__xxxxl;
+@h1__banner-font-size-desktop: @font-size__xxxxl;
+@h1__font-color: '#000';
+@h1__margin-top: 0;
+@h1__margin-bottom: @heading__margin-bottom__base;
+@h1__margin-bottom__desktop: @heading__margin-bottom__lrg;
+@h1__letter-spacing: 0;
+
+@h2__font-size: @font-size__xxl;
+@h2__font-size-desktop: @font-size__xl;
+@h2__font-size-mobile: @font-size__xl;
+@h2__font-color: '#000';
+@h2__margin-top: 0;
+@h2__margin-bottom: @heading__margin-bottom__base;
+@h2__letter-spacing: 0;
+
+@h3__font-size: @font-size__xl;
+@h3__font-color: '#000';
+@h3__margin-top: 0;
+@h3__margin-bottom: @heading__margin-bottom__base;
+@h3__letter-spacing: 0;
+
+@h4__font-size: @font-size__l;
+@h4__font-color: '#000';
+@h4__margin-top: 0;
+@h4__margin-bottom: @heading__margin-bottom__base;
+
+@h5__font-size: @font-size__m;
+@h5__font-color: '#000';
+@h5__margin-top: 0;
+@h5__margin-bottom: @heading__margin-bottom__base;
+
+@h6__font-size: @font-size__s;
+@h6__font-color: '#000';
+@h6__margin-top: 0;
+@h6__margin-bottom: @heading__margin-bottom__base;
+@h6__letter-spacing: 0;
+
+
+//
+//  Links colors
+//  ---------------------------------------------
+
+@link__color: @text__color;
+@link__text-decoration: none;
+
+@link__visited__color: @text__color;
+@link__visited__text-decoration: none;
+
+@link__hover__color: @text__dark__color;
+@link__hover__text-decoration: underline;
+
+@link__active__color: @text__dark__color;
+@link__active__text-decoration: none;
+
+
+@product-name-link__color: @text__color;
+@product-name-link__text-decoration: none;
+@product-name-link__color__visited: @text__color;
+@product-name-link__text-decoration__visited: none;
+@product-name-link__color__hover: @text__dark__color;
+@product-name-link__text-decoration__hover: underline;
+@product-name-link__color__active: @text__dark__color;
+@product-name-link__text-decoration__active: none;
+//
+//  Focus
+//  ---------------------------------------------
+// @focus__color: #fff;
+
+//
+//  Box Shadow
+//  ---------------------------------------------
+@box-shadow: 0px 0px 36px -6px #c2d1d9;
+
+//
+//  Breadcrumbs
+//  ---------------------------------------------
+@breadcrumbs__font-size: @font-size__xxxs;
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+input,
+select,
+span {
+    font-family: @font-family__main;
+}

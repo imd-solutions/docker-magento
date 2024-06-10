@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="page.main.title" remove="true" />
+        <referenceContainer name="content">
+            <block class="Magento\Framework\View\Element\Template" name="product.landing.top-nav" template="PragmaticDigital_ProductLanding::top-nav.phtml" />
+
+            <block class="Magento\Framework\View\Element\Template" name="product.landing.hero" template="PragmaticDigital_ProductLanding::hero.phtml" />
+            <block class="Magento\Framework\View\Element\Template" name="product.landing.upsells" template="PragmaticDigital_HomeBlocks::upsell_cards.phtml"/>
+            <block class="Magento\Framework\View\Element\Template" name="product.landing.cards" template="PragmaticDigital_ProductLanding::product-cards.phtml"/>
+
+            <block class="Magento\Framework\View\Element\Template" name="product.landing.slider.one" template="PragmaticDigital_ProductLanding::slider-1.phtml"/>
+
+            <block class="Magento\Framework\View\Element\Template" name="product.landing.slider.two" template="PragmaticDigital_ProductLanding::slider-2.phtml"/>
+            <block class="Magento\Framework\View\Element\Template" name="pragmatic.homepage.offers" template="PragmaticDigital_HomeBlocks::offers.phtml"/>
+            <block class="Magento\Framework\View\Element\Template" name="product.landing.slider.three" template="PragmaticDigital_ProductLanding::slider-3.phtml"/>
+            <block class="Magento\Framework\View\Element\Template" name="product.landing.slider.four" template="PragmaticDigital_ProductLanding::slider-4.phtml"/>
+            <block class="Magento\Framework\View\Element\Template" name="pragmatic.homepage.slider.customer.review" template="PragmaticDigital_HomeBlocks::customer-slider.phtml"/>
+            <block class="Magento\Framework\View\Element\Template" name="pragmatic.homepage.carousel.range" template="PragmaticDigital_ProductLanding::also-viewed.phtml"/>
+
+        </referenceContainer>
+    </body>
+</page>

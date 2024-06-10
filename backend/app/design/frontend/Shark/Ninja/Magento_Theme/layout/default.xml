@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="default_head_blocks"/>
+    <body>
+        <referenceBlock name="catalog-search-advanced-link" remove="true"/>
+        <referenceBlock name="advanced-search-link" remove="true"/>
+        <referenceBlock name="wishlist_sidebar" remove="true"/>
+        <referenceBlock name="wishlist_link" remove="true"/>
+        <referenceBlock name="catalog.compare.link" remove="true"/>
+        <referenceBlock name="greet.welcome" remove="true"/>
+        <move element="navigation.sections" destination="header-wrapper" before="minicart"/>
+        <move element="top.search" destination="header-wrapper" after="navigation.sections" before="minicart" />
+        <referenceContainer name="header.container">
+            <container name="header.panel.wrapper" htmlClass="panel wrapper" htmlTag="div" before="-" htmlId="header-promo">
+                <container name="custom.header-top.wrapper" htmlTag="div" htmlClass="container" before="-">
+                    <container name="header.panel" label="Page Header Panel" htmlTag="div" htmlClass="panel header ">
+                        <block class="Magento\Framework\View\Element\Template" name="skip_to_content" template="Magento_Theme::html/skip.phtml">
+                            <arguments>
+                                <argument name="target" xsi:type="string">contentarea</argument>
+                                <argument name="label" translate="true" xsi:type="string">Skip to Content</argument>
+                            </arguments>
+                        </block>
+                        <block class="Magento\Framework\View\Element\Template"  name="promo" template="Magento_Theme::html/header/promo.phtml" />
+                        <block class="Magento\Store\Block\Switcher" name="store_language" as="store_language" template="Magento_Store::switch/languages.phtml">
+                            <arguments>
+                                <argument name="view_model" xsi:type="object">Magento\Store\ViewModel\SwitcherUrlProvider</argument>
+                            </arguments>
+                        </block>
+                        <block class="Magento\Customer\Block\Account\Navigation" name="top.links">
+                            <arguments>
+                                <argument name="css_class" xsi:type="string">header links</argument>
+                            </arguments>
+                        </block>
+                    </container>
+                </container>
+            </container>
+            <container name="user-wrapper" label="User Header" as="user-wrapper" htmlTag="div" htmlClass="header content user-header" before="header-wrapper">
+                <container name="user.header.wrapper" htmlTag="div" htmlClass="container"  before="header-wrapper">
+                    <block class="Magento\Framework\View\Element\Template"  name="user-header" template="Magento_Theme::html/header/user.phtml" />
+                </container>
+            </container>
+            <container name="header-wrapper" label="Page Header" as="header-wrapper" htmlTag="div" htmlClass="header content">
+                <container name="custom.header.wrapper" htmlTag="div" htmlClass="container" before="-">
+                    <container name="custom.header.wrapper.inner" htmlTag="div" htmlClass="header__inner" before="-">
+                        <block class="Magento\Theme\Block\Html\Header\Logo" name="logo" template="Magento_Theme::html/header/logo.phtml">
+                            <arguments>
+                                <argument name="logoPathResolver" xsi:type="object">Magento\Theme\ViewModel\Block\Html\Header\LogoPathResolver</argument>
+                                <argument name="logo_size_resolver" xsi:type="object">Magento\Theme\ViewModel\Block\Html\Header\LogoSizeResolver</argument>
+                            </arguments>
+                        </block>
+                        <container name="custom.header.wrapper.nav" htmlTag="div" htmlClass="header__inner__nav" after="-"></container>
+                        <container name="custom.header.wrapper.controls" htmlTag="div" htmlClass="header__inner__controls" after="-">
+                            <block class="Magento\Framework\View\Element\Template" name="custom_template" template="Magento_Theme::html/header/controls.phtml" />
+                        </container>
+                    </container>
+                </container>
+            </container>
+        </referenceContainer>
+        <move element="minicart" destination="header-wrapper" after="my-account-link" />
+        <referenceContainer name="footer-container">
+            <container name="footer" as="footer" label="Page Footer" htmlTag="div" htmlClass="footer content">
+                <block class="Magento\Theme\Block\Html\Footer" name="main_footer" template="Magento_Theme::html/footer.phtml" />
+                <block class="Magento\Theme\Block\Html\Footer" name="footer_lower" template="Magento_Theme::html/lower_footer.phtml" />
+            </container>
+        </referenceContainer>
+        <referenceContainer name="before.body.end">
+            <block class="Magento\Theme\Block\Html\Footer" name="absolute_footer" template="Magento_Theme::html/absolute_footer.phtml" />
+            <container name="mobile-menu-container" htmlTag="div" htmlClass="mobile-menu-container">
+                <block class="PragmaticDigital\Megamenu\Block\Html\TopMenu" name="mobile-menu" template="Magento_Theme::html/header/mobile-menu.phtml" />
+            </container>
+
+           <container name="filter-menu-container" htmlTag="div" htmlClass="filters-menu-container">
+                <block class="PragmaticDigital\Megamenu\Block\Html\TopMenu" name="filter-menu" template="Magento_Theme::html/category-filter.phtml" />
+            </container>
+
+            <container name="sort-menu-container" htmlTag="div" htmlClass="sort-menu-container">
+                <block class="PragmaticDigital\Megamenu\Block\Html\TopMenu" name="sort-menu" template="Magento_Theme::html/category-sort.phtml" />
+            </container> 
+            
+        </referenceContainer>
+        <referenceContainer name="content">
+            <block class="Magento\Framework\View\Element\FormKey" name="formkey"/>
+        </referenceContainer>
+    </body>
+</page>

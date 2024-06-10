@@ -1,0 +1,69 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// phpcs:disable Magento2.Templates.ThisInTemplate.FoundThis
+
+/**
+ * Product additional attributes template
+ *
+ * @var $block \Magento\Catalog\Block\Product\View\Attributes
+ */
+?>
+<?php
+    $_helper = $this->helper(Magento\Catalog\Helper\Output::class);
+    $_product = $block->getProduct();
+
+
+if (!$_product instanceof \Magento\Catalog\Model\Product) {
+    return;
+}
+$attributes = $_product->getAttributes();
+
+ $image_url = $_product->getMediaGalleryImages()->getFirstItem()->getFile();
+
+ if ($_additional = $block->getAdditionalData()) :?>
+    <div class="container product-specifications">
+    <h2>Product Specifications</h2>
+    <div class="card" >
+        <div class="card-body">
+            <div class="row">
+            <?php if ($image_url) : ?>
+      <div class="col-md-4">
+        <div class="spec-item spec-card">
+            <img src="<?= $_helper->productAttribute($_product, $_product->getMediaConfig()->getMediaUrl($image_url), 'image') ?>" alt="<?= $this->escapeHtmlAttr($_product->getName()) ?>" class="img-fluid" />
+        </div>
+        </div>
+<?php endif; ?>
+                <?php foreach ($attributes as $attribute): ?>
+                    <?php
+                    $value = $attribute->getFrontend()->getValue($_product);
+                    if ($value && $attribute->getIsVisibleOnFront() && !is_array($value)): ?>
+                        <div class="col-md-4">
+                            <div class="spec-item spec-card">
+                                <h6 class="spec-label"><?= $attribute->getStoreLabel() ?></h6>
+                                <p class="spec-value"><?= $value ?></p>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            </div>
+        </div>
+        <button class="btn btn-primary" id="toggleSpecButton" onclick="toggleBackground();">
+         <p>Open Full Specifications</p>
+        </button>
+    </div>
+</div>
+
+    
+<?php endif;?>
+
+<script type="text/x-magento-init">
+{
+    "#toggleSpecButton": {
+        "toggleBackground": {}
+    }
+}
+</script>

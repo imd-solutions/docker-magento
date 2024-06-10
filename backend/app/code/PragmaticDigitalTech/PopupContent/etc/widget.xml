@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * @category PragmaticDigitalTech
+ * @package PragmaticDigitalTech_PopupContent
+ * @version 1.0.0
+ * @copyright Copyright (c) 2022 PragmaticDigitalTech Company. All Rights Reserved.
+ * @license - Copyrighted Commercial Software
+ * @author PragmaticDigitalTech Company <contact@pragmaticdigitaltech.com>
+ * @link https://pragmaticdigitaltech.com
+ */
+-->
+
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="bzo_popup_newsletter" class="PragmaticDigitalTech\PopupContent\Block\Widget\SubscribeWidget">
+        <label translate="true">PragmaticDigitalTech - Widget Newsletter</label>
+        <description translate="true">PragmaticDigitalTech - Widget Newsletter</description>
+    </widget>
+</widgets>

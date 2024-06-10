@@ -1,0 +1,115 @@
+<div class="product-spec-tab-button products-tabs__button">
+    <div class="container">
+        <a href="#product-spec-tab">Product Specification</a>
+    </div>
+</div>
+
+<div class="product-spec-tab products-tabs__pannel background-gray-200">
+    <div class="container">
+        <h2><?= $block->escapeHtml(__('Product Specifications')) ?></h2>
+        <div class="product-spec-content section-1 active">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="<?= $block->getViewFileUrl('images/productdisplay/main-unit-image.png') ?>" alt="Main Unit" class="img-fluid" />
+                </div>
+                <div class="col-md-4">
+                    <?php
+                    foreach ([
+
+                        ['title' => 'Capacity', 'value' => '0.4L'],
+                        ['title' => 'Product Weight', 'value' => '2.46kg'],
+                        ['title' => 'Run-Time', 'value' => 'Up to 60 Mins Run-Time'],
+                    ] as $item) {
+                    ?>
+                        <div class="spec-item--card">
+                            <h5><?php echo $item['title']; ?></h5>
+                            <hr />
+                            <span><?php echo $item['value']; ?></span>
+                        </div>
+                    <?php } ?>
+                    <button class="btn btn-black btn-sm toggle-segments">Open specifications</button>
+                </div>
+                <div class="col-md-4">
+                    <?php
+                    foreach ([
+                        ['title' => 'Floor Types', 'value' => 'All Surfaces'],
+                        ['title' => 'Colour', 'value' => 'White / Beats Brass'],
+                        ['title' => 'Number of Speeds', 'value' => '3']
+                    ] as $item) {
+                    ?>
+                        <div class="spec-item--card">
+                            <h5><?php echo $item['title']; ?></h5>
+                            <hr />
+                            <span><?php echo $item['value']; ?></span>
+                        </div>
+                    <?php } ?>
+                </div>
+            </div>
+
+        </div>
+        <div class="product-spec-content section-2">
+            <div class="row">
+                <div class="col-md-3">
+                    <?php
+                    foreach ([
+                        ['title' => 'Colour', 'value' => 'White / Beats Brass'],
+                        ['title' => 'Capacity', 'value' => '0.4L'],
+                        ['title' => 'Guarantee', 'value' => '5 years (2 Years for Battery)']
+                    ] as $item) {
+                    ?>
+                        <div class="spec-item">
+                            <h5><?php echo $item['title']; ?></h5>
+                            <hr />
+                            <span><?php echo $item['value']; ?></span>
+                        </div>
+                    <?php } ?>
+                </div>
+                <div class="col-md-3">
+                    <?php
+                    foreach ([
+                        ['title' => 'Product Weight', 'value' => '2.46kg'],
+                        ['title' => 'Run-Time', 'value' => 'Up to 60 Mins Run-Time'],
+                        ['title' => 'Barcode', 'value' => '0622356278942']
+                    ] as $item) {
+                    ?>
+                        <div class="spec-item">
+                            <h5><?php echo $item['title']; ?></h5>
+                            <hr />
+                            <span><?php echo $item['value']; ?></span>
+                        </div>
+                    <?php } ?>
+                </div>
+                <div class="col-md-3">
+                    <?php
+                    foreach ([
+                        ['title' => 'Product Dimensions (cm)', 'value' => 'W: 26.4 D: 35.3 H: 109.2'],
+                        ['title' => 'Filter', 'value' => 'Anti-Allergen Complete Seal']
+                    ] as $item) {
+                    ?>
+                        <div class="spec-item">
+                            <h5><?php echo $item['title']; ?></h5>
+                            <hr />
+                            <span><?php echo $item['value']; ?></span>
+                        </div>
+                    <?php } ?>
+                </div>
+                <div class="col-md-3">
+                    <?php
+                    foreach ([
+                        ['title' => 'Floor Types', 'value' => 'All Surfaces'],
+                        ['title' => 'Number of Speeds', 'value' => '3']
+                    ] as $item) {
+                    ?>
+                        <div class="spec-item">
+                            <h5><?php echo $item['title']; ?></h5>
+                            <hr />
+                            <span><?php echo $item['value']; ?></span>
+                        </div>
+                    <?php } ?>
+                </div>
+            </div>
+            <button class="btn btn-black-outline toggle-segments">Close specifications</button>
+        </div>
+
+    </div>
+</div>

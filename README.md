@@ -2,19 +2,19 @@
 
 # Run Development
 
-docker-compose -f docker-compose-dev.yml up --build
+docker-compose --project-name site_env -f docker-compose-dev.yml up --build
 
 # Run Staging
 
-docker-compose -f docker-compose-staging.yml up --build
+docker-compose --project-name site_env -f docker-compose-staging.yml up --build
 
 # Run production
 
-docker-compose -f docker-compose.yml up --build
+docker-compose --project-name site_env -f docker-compose.yml up --build
 
 # Composer
 
-docker-compose -f docker-compose-dev.yml run --rm composer ----- --ignore-platform-reqs
+docker-compose --project-name site_env -f docker-compose-dev.yml run --rm composer ----- --ignore-platform-reqs
 
 Public Key: ----------- Private Key: ----------
 
@@ -32,8 +32,7 @@ docker exec -it <name> ash
 
 # Disable Elastic Search
 
-php -d memory_limit=-1 bin/magento module:disable
-{Magento_Elasticsearch,Magento_InventoryElasticsearch,Magento_Elasticsearch6,Magento_Elasticsearch7}
+php -d memory_limit=-1 bin/magento module:disable {Magento_Elasticsearch,Magento_InventoryElasticsearch,Magento_Elasticsearch6,Magento_Elasticsearch7}
 
 # Add alternate to Elastic Search
 
@@ -43,7 +42,9 @@ bin/magento module:enable Swissup_SearchMysqlLegacy Swissup_Core
 
 # Disable Two FactorAuth
 
-php -d memory_limit=-1 bin/magento module:disable Magento_TwoFactorAuth php -d memory_limit=-1 bin/magento cache:flush
+php -d memory_limit=-1 bin/magento module:disable Magento_AdminAdobeImsTwoFactorAuth
+php -d memory_limit=-1 bin/magento module:disable Magento_TwoFactorAuth
+php -d memory_limit=-1 bin/magento cache:flush
 
 # Standard Magento CLI commands
 
@@ -52,18 +53,67 @@ memory_limit=-1 bin/magento indexer:reindex catalogsearch_fulltext
 
 # Additional Commands
 
-Sample Data: php -d memory_limit=-1 bin/magento sampledata:deploy Disable 2Factor: php -d memory_limit=-1 bin/magento
-module:disable Magento_TwoFactorAuth Disable Elasticsearch: php -d memory_limit=-1 bin/magento config:set
-catalog/search/engine none Change BaseUrl: php -d memory_limit=-1 bin/magento setup:store-config:set
---base-url="http://magento-blinds.local/"  
-Change Secure BaseUrl: php -d memory_limit=-1 bin/magento setup:store-config:set
---base-url-secure="https://46b90d815995.ngrok.io/"  
-Flush Cache Storage: php -d memory_limit=-1 bin/magento cache:clean Flush Magento cache: php -d memory_limit=-1
-bin/magento cache:flush Flush Both: php -d memory_limit=-1 bin/magento cache:clean && php -d memory_limit=-1 bin/magento
-cache:flush Re-index: php -d memory_limit=-1 bin/magento indexer:reindex Show Mode: php -d memory_limit=-1 bin/magento
-deploy:mode:show Set Developer Mode: php -d memory_limit=-1 bin/magento deploy:mode:set developer Check Modules: php -d
-memory_limit=-1 bin/magento module:status Add template CSS and JS: php -d memory_limit=-1 bin/magento setup:
-static-content:deploy -f
+# Sample Data:
+
+php -d memory_limit=-1 bin/magento sampledata:deploy Disable
+
+# 2Factor:
+
+php -d memory_limit=-1 bin/magento module:disable Magento_TwoFactorAuth
+
+# Disable Elasticsearch:
+
+php -d memory_limit=-1 bin/magento config:set catalog/search/engine none
+
+# Find out what search engine is being used
+
+php -d memory_limit=-1 bin/magento config:show catalog/search/engine
+
+# Set a search engine
+
+php -d memory_limit=-1 bin/magento config:set catalog/search/engine XXXXXX (elasticsearch7)
+
+# Change BaseUrl:
+
+php -d memory_limit=-1 bin/magento setup:store-config:set --base-url="http://magento-xxxx.local/"
+
+# Change Secure BaseUrl:
+
+php -d memory_limit=-1 bin/magento setup:store-config:set --base-url-secure="https://magento-xxxx.local"
+
+# Flush Cache Storage:
+
+php -d memory_limit=-1 bin/magento cache:clean
+
+# Flush Magento cache:
+
+php -d memory_limit=-1 bin/magento cache:flush
+
+# Flush Both:
+
+php -d memory_limit=-1 bin/magento cache:clean && php -d memory_limit=-1 bin/magento cache:flush
+
+# Re-index:
+
+php -d memory_limit=-1 bin/magento indexer:reindex
+
+# Show Mode:
+
+php -d memory_limit=-1 bin/magento deploy:mode:show
+
+# Set Developer Mode:
+
+php -d memory_limit=-1 bin/magento deploy:mode:set developer
+
+# Check Modules/ List Modules:
+
+php -d memory_limit=-1 bin/magento module:status
+
+# Add template CSS and JS:
+
+php -d memory_limit=-1 bin/magento setup:static-content:deploy -f
+
+# Initial setup or magento admin user and config:
 
 php -d memory_limit=-1 bin/magento setup:install \
 --cleanup-database \
@@ -90,8 +140,12 @@ php -d memory_limit=-1 bin/magento setup:install \
 --elasticsearch-port=9200 \
 --use-sample-data
 
+# Create and admin
+
 php -d memory_limit=-1 bin/magento admin:user:create --admin-user= --admin-password= --admin-email= --admin-firstname=
 --admin-lastname=
+
+# php -d memory_limit=-1 bin/magento admin:user:create --admin-user=admin_shark --admin-password=p4ssw0rd --admin-email=admin@shark.co.uk --admin-firstname=Admin --admin-lastname=Shark
 
 # ENV SETUP
 
@@ -101,6 +155,7 @@ FRONTEND_SSL_PORT=443
 FRONTEND_SSH_PORT=23
 MYSQL_PORT=3307
 PHP_PORT=9000
+ADMINER_PORT=8888
 REDIS_PORT=6380
 REDIS_SESSION_PORT=6381
 MYSQL_DATABASE=magento
@@ -119,4 +174,4 @@ PHP_POST_MAX_SIZE=500M
 PHP_UPLOAD_MAX_FILESIZE=1024M
 MAILHOG_PORT=1026
 MAILHOG_SSL_PORT=8026
-ELASTICSEARCH_PORT=9201
+ELASTICSEARCH_PORT=9200

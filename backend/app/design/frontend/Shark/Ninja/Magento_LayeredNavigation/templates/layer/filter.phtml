@@ -1,0 +1,59 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+?>
+<?php
+/** @var \Magento\LayeredNavigation\Block\Navigation\FilterRenderer $block */
+/** @var \Magento\Framework\Escaper $escaper */
+/** @var \Magento\Framework\Locale\LocaleFormatter $localeFormatter */
+/** @var \Magento\LayeredNavigation\ViewModel\Layer\Filter $viewModel */
+$viewModel = $block->getData('product_layer_view_model');
+?>
+
+
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<?php
+/** @var \Magento\LayeredNavigation\Block\Navigation\FilterRenderer $block */
+/** @var \Magento\Framework\Escaper $escaper */
+/** @var \Magento\Framework\Locale\LocaleFormatter $localeFormatter */
+/** @var \Magento\LayeredNavigation\ViewModel\Layer\Filter $viewModel */
+$viewModel = $block->getData('product_layer_view_model');
+?>
+
+<style>
+
+
+
+
+</style>
+
+
+<ol id="list">
+    <?php foreach ($filterItems as $filterItem): ?>
+        <li class="item">
+            <div class="item-content">
+                <input type="checkbox" id="filterCheckbox<?= /* @noEscape */ $filterItem->getId() ?>" class="filter-checkbox">
+                <label for="filterCheckbox<?= /* @noEscape */ $filterItem->getId() ?>">
+                    <a href="<?= $escaper->escapeUrl($filterItem->getUrl()) ?>" rel="nofollow"><?= /* @noEscape */ $filterItem->getLabel() ?></a>
+                </label>
+                <?php if ($viewModel->shouldDisplayProductCountOnLayer()): ?>
+                    <span class="count"><?= $escaper->escapeHtml($localeFormatter->formatNumber((int) $filterItem->getCount())) ?></span>
+                <?php endif; ?>
+            </div>
+            <?php if ($viewModel->shouldDisplayProductCountOnLayer() && $filterItem->getPriceRange()): ?>
+                <span class="price-range">
+                    <span class="price"><?= $escaper->escapeHtml($filterItem->getPriceRange()->getFrom()) ?></span> -
+                    <span class="price"><?= $escaper->escapeHtml($filterItem->getPriceRange()->getTo()) ?></span>
+                </span>
+            <?php endif; ?>
+        </li>
+    <?php endforeach ?>
+</ol>

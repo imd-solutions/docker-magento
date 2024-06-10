@@ -1,0 +1,26 @@
+//dumb fix for bootstrap container on mobile
+//container is wider than screen so setting to auto fixes the problem
+@media screen and (max-width:991px) {
+    .container{
+        width:auto !important;
+    }
+
+    .catalog-product-view{
+        .columns{
+            display: block !important;
+            .column.main{
+                display: none;
+            }
+        }
+    }
+}
+
+//class for handing hides on mobile
+.hideOnMobile{
+    @media screen and (max-width:@screen__s) {
+        display: none;
+    }
+}
+
+// page-with-filter page-products categorypath-vacuum-cleaners category-vacuum-cleaners page-layout-2columns-left catalog-category-view page-layout-category-full-width
+
