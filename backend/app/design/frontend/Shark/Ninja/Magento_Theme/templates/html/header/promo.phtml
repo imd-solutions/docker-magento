@@ -3,21 +3,21 @@
 </div>
 
 <script>
-// require(['jquery'], function($) {
-//     $(document).ready(function() {
-//         $('.minicart-wrapper').hover(
-//             function() { // Mouse enter
-//                 if (!$('.minicart-wrapper .block-minicart').is(':visible')) {
-//                     $('.action.showcart').trigger('click');
-//                 }
-//             }, 
-//             function() { // Mouse leave
-//                 if ($('.minicart-wrapper .block-minicart').is(':visible')) {
-//                     $('.action.showcart').trigger('click');
-//                 }
-//             }
-//         );
-//     });
-// });
+require(['jquery'], function($) {
+    $(document).ready(function() {
+        $('.minicart-wrapper').hover(
+            function() { // Mouse enter
+                if (!$('.minicart-wrapper .block-minicart').is(':visible')) {
+                    $('.action.showcart').trigger('click');
+                }
+            }, 
+            function() { // Mouse leave
+                if ($('.minicart-wrapper .block-minicart').is(':visible')) {
+                    $('.action.showcart').trigger('click');
+                }
+            }
+        );
+    });
+});
 </script>
 
