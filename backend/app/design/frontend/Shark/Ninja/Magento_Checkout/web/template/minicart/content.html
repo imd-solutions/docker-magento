@@ -1,9 +1,10 @@
-          <!--
+ <!--
 /**
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
     .subtotal-bottom-fix .subtotalsss {
         display: flex;
@@ -19,10 +20,10 @@
     span.close-button {
         align-items: l;
         margin-left: 11%;
-        margin-left: 170px;
+        /* margin-left: 170px;   */
        
         text-decoration: underline;
-        /* font-weight: bold; */
+        font-weight: bold !important;
     }
     span.order-summary {
         font-weight: bold;
@@ -54,6 +55,8 @@
         font-weight: bold;
         border: 1px solid;
         margin-left: 14px;
+        padding: 15px 50px;
+        margin-top: 10px;
     }
      
     input#cart-item-15-qty {
@@ -71,6 +74,7 @@
     .minicart-items .item-qty {
         text-align: center;
         width: 35px !important;
+     
     }
     input[type="number"]{
         height: 25px;
@@ -81,7 +85,7 @@
     border-radius: 0px 7px 7px 0px;
     width: 15px;
     padding: 4px;
-    background-color: #ccc;
+    background-color: #ebebeb;
     /* position: absolute; */
     height: 16px;
     /* margin-left: 0px; */
@@ -90,12 +94,12 @@
    
     .less {
          
-
+ 
     border: 1px solid #9b9696;
     border-radius: 7px 0px 0px 7px;
     width: 15px;
     padding: 4px;
-    background-color: #ccc;
+    background-color:#ebebeb;
     /* position: absolute; */
     height: 16px;
     /* margin-left: 0px; */
@@ -115,6 +119,7 @@
     }
     .subtotalsss {
         font-weight: bold;
+        margin-top: 20px;
     }
    
     button#update-cart-item-20 {
@@ -125,14 +130,15 @@
     .products-short {
         /* float: none; */
         /* display: flex; */
-        margin-left: -439px;
+        margin-left: -564px;
         background-color: #FFF;
         padding-left: -231px;
         position: absolute;
-        padding: 15px;
+        padding: 20px;
         margin-top: -26px;
-         
+         height: 620px;
         border: 1px solid #ccc;
+        overflow-y: scroll;
    
     }
     .product {
@@ -145,7 +151,7 @@
     }
     button.btn-product {
         border-radius: 5px;
-        padding: 4px 10px !important;
+        /* padding: 4px 10px !important; */
         border: 1px solid;
         margin-left: 19px;
         /* margin-top: -30px; */
@@ -156,34 +162,37 @@
     }
     .product-description {
         margin-left: 15px;
-        font-size: 12px;
-         
-   
-    }
+        font-size: 16px;
+         color: #9b9696;
+         margin-bottom: 15px;
+         margin-top: 11px;
+         font-family: math;
+        }
     .product-price {
-        margin-left: 15px;
-        margin-top: 7px;
+        /* margin-left: 15px;
+        margin-top: 7px; */
         line-height: 25px;
-        font-weight: bold;
+        font-weight: 900;
+        margin: 11px 15px;;
     }
    
     button.button-add {
-        padding: 4px 10px;
+        padding: 8px 20px !important;
         font-size: 14px;
         margin-left: 13px;
-       
+        font-weight: 900;
     }
    
     .bt-m {
-        margin-left: 120px;
-        margin-top: -22px;
+        margin-left: 15px;
+        margin-top: 6px;
     }
     .product-mini {
         display: flex;
         /* margin-bottom: 60px; */
         border-bottom: 1px solid #ccc;
-        padding-bottom: 15px;
-        margin-top: 15px;
+        padding-bottom: 25px;
+        margin-top: 35px;
     }
     span.text {
         font-weight: bold;
@@ -199,13 +208,11 @@
          
         width: 80px;
     }
-    .minicart-items-wrapper {
-        height: 254px !important;
-        margin-top: -31px;
-        overflow: hidden;
-    }
     .view-mini {
-        padding-top: 48px;
+        padding: 12px;
+        font-family: math !important;
+        font-weight: 900;
+        font-size: 18px !important;
     }
     .minicart-wrapper .block-minicart {
                 right: -3px;
@@ -217,12 +224,17 @@
         margin-left: 20px;
        
     }
+    span.order-summary{
+        width: 122px;
+    }
     .minicart-items-wrapper {
         border: 1px solid #cccccc;
         margin: 0 5px;
         border-left: 0;
         border-right: 0;
         overflow-x: auto;
+        overflow-y: scroll;
+        height: 320px !important;
         padding: 15px;
     }
    
@@ -258,21 +270,15 @@ a, .alink {
    
     border-top: 1px solid #cccccc !important;
 }
-.minicart-items-wrapper {
-    border: 0px solid #cccccc;
-    margin: 0 5px;
-    border-left: 0;
-    border-right: 0;
-    overflow-x: auto;
-    padding: 15px;
-}
 .view-cart-bottom {
     border-bottom: 1px solid #c6c3c3 !important;
 }
-
+a.action.delete{
+    margin-left: 20px;
+}
 @media only screen and (max-width: 479px){
     .minicart-items-wrapper {
-        height: 100px !important;}
+        height: 150px !important;}
 }
 @media only screen and (max-width: 479px)
 {
@@ -281,9 +287,9 @@ a, .alink {
     position: absolute;
 }
 }
-
+ 
 @media only screen and (max-width: 479px) {
-
+ 
     .products-short {
     /* float: none; */
     /* display: flex; */
@@ -292,9 +298,22 @@ a, .alink {
     padding-left: -231px;
     position: absolute;
     padding: 15px;
-    margin-top: 326px;
+    margin-top: 393px;
     border: 1px solid #ccc;
+    font-size: 18px !important;
 }
+}
+ 
+@media only screen and (max-width: 767px) {
+ 
+    .minicart-wrapper .product .actions {
+        margin-top: -28px;
+        margin-left: 20px;
+}
+.minicart-items .action.delete {
+    display: contents;
+}
+ 
 }
 .minicart-items .update-cart-item {
     font-size: 11;
@@ -302,6 +321,62 @@ a, .alink {
     vertical-align: top;
     font-size: 11px;
 }
+.items-total {
+    display: flex;
+        width: 310px;
+    justify-content: space-between;
+}
+.seller-btn{
+    /* padding: 3% !important; */
+    font-weight: 700;
+}
+.fa{
+    font-size: 15px;
+}
+a {
+    font-weight: 700;
+}
+div#ui-id-1{
+    font-size: 17px !important;
+    height: 662px !important;
+}
+.product-cta{
+    display: flex;
+}
+/* Custom Scrollbar for WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Background of the scrollbar track */
+    border-radius: 10px; /* Rounding the corners */
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; /* Color of the scrollbar handle */
+    border-radius: 10px; /* Rounding the corners */
+}
+ 
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color of the scrollbar handle on hover */
+}
+ 
+/* Firefox scrollbar styling (only available in newer versions) */
+* {
+    scrollbar-width: thin; /* Make the scrollbar thinner */
+    scrollbar-color: #888 #f1f1f1; /* Color of the scrollbar handle and track */
+}
+ 
+/* For Internet Explorer and Edge */
+body {
+    -ms-overflow-style: -ms-autohiding-scrollbar; /* Auto-hiding scrollbar */
+}
+ 
+ 
     </style>
     <!-- <div class="block-title">
         <strong>
@@ -314,7 +389,7 @@ a, .alink {
             </span>
         </strong>
     </div> -->
-    
+   
     <div class="block-content">
         <button type="button"
                 id="btn-minicart-close"
@@ -344,8 +419,40 @@ a, .alink {
                         </div>
                         <div class="product-content">
                             <div class="product-title-wrapper">
-                                <div class="product-title">Shark Spare Filter Kit <button class="btn-product">Best Seller</button>
+                                <div class="product-title">Shark Spare Filter Kit <button class="btn-product seller-btn"><i class="fa fa-tag"></i> Best Seller</button>
                                 </div>
+                             </div>
+                            <div class="product-description">simply dummy text of the printing and typesetting industry.</div>
+                            <div class="product-price">1000</div>
+                            <div class="product-cta">
+                                <button class="button-add">Add to cart</button>
+                                <div class="bt-m"><a href="">More Info</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-mini">
+                        <div class="product-image">
+                            <img src="https://placehold.co/100x150" alt="">
+                        </div>
+                        <div class="product-content">
+                            <div class="product-title-wrapper">
+                                <div class="product-title">Shark Spare Filter Kit </div>
+                             </div>
+                            <div class="product-description">simply dummy text of the printing and typesetting industry.</div>
+                            <div class="product-price">1000</div>
+                            <div class="product-cta">
+                                <button class="button-add">Add to cart</button>
+                                <div class="bt-m"><a href="">More Info</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-mini">
+                        <div class="product-image">
+                            <img src="https://placehold.co/100x150" alt="">
+                        </div>
+                        <div class="product-content">
+                            <div class="product-title-wrapper">
+                                <div class="product-title">Shark Spare Filter Kit </div>
                              </div>
                             <div class="product-description">simply dummy text of the printing and typesetting industry.</div>
                             <div class="product-price">1000</div>
@@ -402,15 +509,15 @@ a, .alink {
                         <span class="order-summary" translate="'Order Summary'"></span>
                         <span class="close-button" translate="'Close'"></span>
             </div>
-    
+   
             <!-- <each args="getRegion('subtotalContainer')" render=""></each> -->
             <each args="getRegion('extraInfo')" render=""></each>
-    
+   
         </if>
-    
+   
         <if args="getCartParam('summary_count')">
             <strong class="subtitle" translate="'Recently added item(s)'"></strong>
-            <div data-action="scroll" class="minicart-items-wrapper">
+            <div data-action="scroll" class="minicart-items-wrapper" style="overflow-y: scroll;">
                 <ol id="mini-cart" class="minicart-items" data-bind="foreach: { data: getCartItems(), as: 'item' }">
                     <each args="$parent.getRegion($parent.getItemRenderer(item.product_type))"
                           render="{name: getTemplate(), data: item, afterRender: function() {$parents[1].initSidebar()}}"></each>
@@ -422,7 +529,7 @@ a, .alink {
                         <p class="minicart empty text" text="getCartParam('cart_empty_message')"></p>
                         <div class="actions">
                             <div class="secondary">
-                                <a class="action viewcart" data-bind="attr: {href: shoppingCartUrl}">
+                                <a class="action viewcart" style="color: darkgray" data-bind="attr: {href: shoppingCartUrl}">
                                     <span translate="'View Cart'"></span>
                                 </a>
                             </div>
@@ -432,9 +539,9 @@ a, .alink {
             </div>
         <div class="actions view-cart-bottom" if="getCartParam('summary_count')">
             <div class="secondary">
-                    <div class="view-mini"> 
+                    <div class="view-mini">
                 <a class="action viewcart" data-bind="attr: {href: shoppingCartUrl}">
-                    <span translate="'View Cart'"></span> 
+                    <span translate="'View Cart'"></span>
                 </a></div>
             </div>
         </div>
